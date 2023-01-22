@@ -1,0 +1,60 @@
+@import "../variables";
+
+section {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.heroBanner {
+  padding-top: 40px;
+  background: $color-primary-1;
+  background: linear-gradient(
+    0deg,
+    $color-primary-1 21%,
+    $color-primary-2 100%
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  > * {
+    width: 50%;
+  }
+
+  h1 {
+    font-size: 4rem;
+    color: $color-white;
+    font-weight: normal;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: right;
+    font-family: "Courgette", cursive;
+  }
+  h3 {
+    font-size: 1.3rem;
+    font-family: "Marck Script", cursive;
+
+    color: $color-white;
+    padding: 20px;
+    text-align: right;
+  }
+}
+
+@media only screen and (max-width: 860px) {
+  .heroBanner {
+    > * {
+      width: 100%;
+    }
+    text-align: center;
+
+    h1 {
+      font-size: 3rem;
+      text-align: center;
+    }
+    h3 {
+      text-align: center;
+    }
+  }
+}

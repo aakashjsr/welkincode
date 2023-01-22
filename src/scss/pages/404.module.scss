@@ -1,0 +1,40 @@
+@import "../variables";
+
+.container {
+  height: 100vh;
+  background-color: $color-primary-2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+
+  h1 {
+    margin: 0;
+    font-size: 8rem;
+    color: $color-white;
+  }
+
+  h2 {
+    color: $color-white;
+  }
+
+  a {
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid $color-white;
+    color: $color-white;
+    background-color: $color-primary-2;
+    border-radius: 20px;
+    transition: all 500ms ease;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-primary-2;
+    }
+
+    &:visited {
+      color: none;
+    }
+  }
+}
