@@ -57,35 +57,3 @@ section {
     }
   }
 }
-
-@keyframes particleAnimation {
-  5% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-90vh);
-    opacity: 0;
-  }
-}
-
-.particle {
-  &::after {
-    content: ".";
-  }
-
-  position: absolute;
-  color: white;
-  text-shadow: 0 0 200px $color-white;
-  font-size: 20px;
-  display: inline-block;
-  bottom: 0;
-  opacity: 0;
-
-  @for $i from 1 through 100 {
-    &:nth-of-type(#{$i}) {
-      left: #{$i} + vw;
-      animation: particleAnimation (random(5) + 3) + s;
-      animation-delay: random(5) + s;
-    }
-  }
-}

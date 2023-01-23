@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import styles from "../scss/pages/home.module.scss";
 
 import homeBackground from "../assets/images/homeBackground.png";
+import Particles from "../components/Particles";
 
 export default function Home() {
   return (
@@ -16,9 +17,7 @@ export default function Home() {
 
       <div className={styles.homePage}>
         <section className={styles.heroBanner}>
-          {/* {[...Array(100)].map((e, index) => (
-            <div className={styles.particle}>.</div>
-          ))} */}
+          <Particles />
           <div className={styles.bannerTitle}>
             <h1>Fullstack Development</h1>
             <h3>
