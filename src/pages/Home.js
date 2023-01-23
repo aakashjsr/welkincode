@@ -16,11 +16,9 @@ export default function Home() {
 
       <div className={styles.homePage}>
         <section className={styles.heroBanner}>
-          {[...Array(100)].map((e, index) => (
-            <div className={styles.particle} style={{ left: `${index}vw` }}>
-              .
-            </div>
-          ))}
+          {/* {[...Array(100)].map((e, index) => (
+            <div className={styles.particle}>.</div>
+          ))} */}
           <div className={styles.bannerTitle}>
             <h1>Fullstack Development</h1>
             <h3>
