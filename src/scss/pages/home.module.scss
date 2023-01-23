@@ -59,7 +59,10 @@ section {
 }
 
 @keyframes particleAnimation {
-  to {
+  5% {
+    opacity: 1;
+  }
+  100% {
     transform: translateY(-90vh);
     opacity: 0;
   }
@@ -72,6 +75,7 @@ section {
   font-size: 20px;
   display: inline-block;
   bottom: 0;
+  opacity: 0;
 
   @for $i from 1 through 100 {
     &:nth-of-type(#{$i}) {
