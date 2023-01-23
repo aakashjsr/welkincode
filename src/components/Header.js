@@ -4,9 +4,16 @@ import Logo from "../assets/images/logo.png";
 export default function Header() {
   return (
     <nav>
-      <a href="">About</a>
-      <img className={styles.logo} src={Logo} />
-      <a href="">Portfolio</a>
+      <div className={styles.linkContainer}>
+        <a href="">About</a>
+      </div>
+
+      <div className={styles.logoSection}>
+        <img className={styles.logo} src={Logo} />
+      </div>
+      <div className={styles.linkContainer}>
+        <a href="">Portfolio</a>
+      </div>
     </nav>
   );
 }

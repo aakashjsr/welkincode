@@ -13,18 +13,21 @@ nav {
   position: absolute;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
 
-  a {
-    color: $color-white;
-    text-decoration: none;
-    padding: 10px;
-    text-transform: uppercase;
-    margin: 0 5%;
-    transition: transform 500ms;
-    &:hover {
-      transform: scale(1.2);
+  .linkContainer {
+    margin: 0 1%;
+    a {
+      color: $color-white;
+      text-decoration: none;
+      padding: 10px;
+      text-transform: uppercase;
+      transition: transform 500ms;
+      display: inline-block;
+      &:hover {
+        transform: scale(1.2);
+      }
     }
   }
 }

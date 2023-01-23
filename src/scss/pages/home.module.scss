@@ -30,12 +30,11 @@ section {
     padding: 20px;
     margin: 20px 0;
     text-align: right;
-    font-family: "Courgette", cursive;
   }
   h3 {
-    font-size: 1.3rem;
-    font-family: "Marck Script", cursive;
-
+    font-size: 1.2rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: normal;
     color: $color-white;
     padding: 20px;
     text-align: right;
@@ -55,6 +54,29 @@ section {
     }
     h3 {
       text-align: center;
+    }
+  }
+}
+
+@keyframes particleAnimation {
+  to {
+    transform: translateY(-90vh);
+    opacity: 0;
+  }
+}
+
+.particle {
+  position: absolute;
+  color: white;
+  text-shadow: 0 0 20px red;
+  font-size: 20px;
+  display: inline-block;
+  bottom: 0;
+
+  @for $i from 1 through 100 {
+    &:nth-of-type(#{$i}) {
+      animation: particleAnimation (random(5) + 3) + s infinite ease;
+      animation-delay: random(5) + s;
     }
   }
 }
