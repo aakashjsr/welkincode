@@ -36,7 +36,13 @@ export default function Home() {
           </div>
         </section>
 
-        <section className={styles.technologies}></section>
+        <section id="about" className={styles.aboutSection}>
+          <h1>About</h1>
+        </section>
+
+        <section id="portfolio" className={styles.portfolioSection}>
+          <h1>Portfolio</h1>
+        </section>
       </div>
     </>
   );
