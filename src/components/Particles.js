@@ -13,7 +13,7 @@ export default function Particles() {
           5,
           7
         )}s linear ${getRandomInt(1, 3)}s infinite`,
-        left: `${2 * index}vw`,
+        left: `${(100 / count) * index}vw`,
         bottom: 0,
       }}
     ></div>
