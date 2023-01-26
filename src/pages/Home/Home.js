@@ -1,10 +1,8 @@
 import { Helmet } from "react-helmet";
 import styles from "../../scss/pages/home.module.scss";
 import AboutSection from "./AboutSection";
-import ContactSection from "./ContactSection";
 import HeroBanner from "./HeroBanner";
 import PortfolioSection from "./PortfolioSection";
-import TestimonialSection from "./TestimonialSection";
 
 export default function Home() {
   return (
@@ -20,9 +18,7 @@ export default function Home() {
       <div className={styles.homePage}>
         <HeroBanner />
         <AboutSection />
-        <PortfolioSection />
-        <TestimonialSection />
-        <ContactSection />
+        {/* <PortfolioSection /> */}
       </div>
     </>
   );

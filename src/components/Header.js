@@ -15,9 +15,6 @@ export default function Header() {
         <a href="" target="about" onClick={handleClick}>
           About
         </a>
-        <a href="" target="about" onClick={handleClick}>
-          Testimonials
-        </a>
       </div>
 
       <div className={styles.logoSection}>
@@ -26,9 +23,6 @@ export default function Header() {
       <div className={styles.linkContainer}>
         <a href="" target="portfolio" onClick={handleClick}>
           Portfolio
-        </a>
-        <a href="" target="contact" onClick={handleClick}>
-          Contact
         </a>
       </div>
     </nav>
