@@ -52,8 +52,8 @@ function SocialMediaItem({ icon, url }) {
     <div className={styles.socialMediaItem}>
       <img
         src={icon}
-        height="30"
-        width="30"
+        height="40"
+        width="40"
         onClick={(e) => window.open(url)}
       />
     </div>
@@ -73,10 +73,6 @@ export default function AboutSection() {
               url="https://www.linkedin.com/in/aakash94/"
             />
             <SocialMediaItem icon={gmail} url="mailto: aakashjsr@gmail.com" />
-            <SocialMediaItem
-              icon={medium}
-              url="https://medium.com/@aakashjsr"
-            />
             <SocialMediaItem
               icon={codementor}
               url="https://www.codementor.io/@aakashkumardas"
