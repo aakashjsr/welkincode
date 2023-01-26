@@ -7,7 +7,7 @@ section {
 
 .heroBanner {
   position: relative;
-  padding-top: 40px;
+  padding-top: 4rem;
   background: $color-primary-1;
   background: linear-gradient(
     0deg,
@@ -67,4 +67,13 @@ section {
 
 .portfolioSection {
   background-color: $color-primary-2;
+}
+
+// about section
+
+.aboutSection {
+  h1 {
+    color: $color-primary-2;
+    text-align: center;
+  }
 }

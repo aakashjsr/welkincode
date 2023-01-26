@@ -2,21 +2,21 @@ import styles from "../scss/components/header.module.scss";
 import Logo from "../assets/images/logo.png";
 
 export default function Header() {
-  const scrollToSection = (id) => {
-    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+  const handleClick = (e) => {
+    e.preventDefault();
+    document
+      .getElementById(e.target.getAttribute("target"))
+      .scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <nav>
       <div className={styles.linkContainer}>
-        <a
-          href=""
-          onClick={(e) => {
-            e.preventDefault();
-            scrollToSection("about");
-          }}
-        >
+        <a href="" target="about" onClick={handleClick}>
           About
+        </a>
+        <a href="" target="about" onClick={handleClick}>
+          Testimonials
         </a>
       </div>
 
@@ -24,14 +24,11 @@ export default function Header() {
         <img className={styles.logo} src={Logo} />
       </div>
       <div className={styles.linkContainer}>
-        <a
-          href=""
-          onClick={(e) => {
-            e.preventDefault();
-            scrollToSection("portfolio");
-          }}
-        >
+        <a href="" target="portfolio" onClick={handleClick}>
           Portfolio
+        </a>
+        <a href="" target="contact" onClick={handleClick}>
+          Contact
         </a>
       </div>
     </nav>
