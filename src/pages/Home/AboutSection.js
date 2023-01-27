@@ -1,5 +1,4 @@
 import styles from "../../scss/pages/home.module.scss";
-// import profileImg from "../../assets/images/aakash.jpeg";
 import profileImg from "../../assets/images/dp.jpeg";
 import serviceNow from "../../assets/images/company/servicenow.png";
 import toptal from "../../assets/images/company/toptal.png";
@@ -7,20 +6,10 @@ import codementor from "../../assets/images/company/codementor.jpeg";
 import lji from "../../assets/images/company/lji.jpeg";
 import jtg from "../../assets/images/company/jtg.jpeg";
 import reportgarden from "../../assets/images/company/reportgarden.png";
-import django from "../../assets/images/skill/django.png";
-import docker from "../../assets/images/skill/docker.png";
-import html from "../../assets/images/skill/html.png";
-import css from "../../assets/images/skill/css.jpeg";
-import sass from "../../assets/images/skill/sass.png";
-import js from "../../assets/images/skill/js.png";
-import react from "../../assets/images/skill/react.png";
-import python from "../../assets/images/skill/python.jpeg";
-import aws from "../../assets/images/skill/aws.jpeg";
-import postgres from "../../assets/images/skill/postgres.png";
-import mysql from "../../assets/images/skill/mysql.png";
 import linkedin from "../../assets/images/company/linkedin.png";
 import fiverr from "../../assets/images/company/fiverr.png";
 import gmail from "../../assets/images/company/gmail.png";
+import TechSkill from "../../components/TechSkill";
 
 function ExperienceRow({ companyName, role, tenure, icon }) {
   return (
@@ -109,7 +98,7 @@ export default function AboutSection() {
           <ExperienceRow
             companyName="ServiceNow"
             role="Senior Software Engineer"
-            tenure="2017 - Present"
+            tenure="2019 - Present"
             icon={serviceNow}
           />
           <ExperienceRow
@@ -159,18 +148,18 @@ export default function AboutSection() {
           </ul>
           <h3>SKILLS</h3>
           <div className={styles.skillIcons}>
-            <SkillItem logo={python} text="python" />
-            <SkillItem logo={django} text="django" />
-            <SkillItem logo={html} text="html" />
-            <SkillItem logo={css} text="css" />
-            <SkillItem logo={sass} text="sass" />
-            <SkillItem logo={js} text="javascript" />
-            <SkillItem logo={react} text="react" />
-            <SkillItem logo={aws} text="aws" />
-            <SkillItem logo={docker} text="docker" />
-            <SkillItem logo={postgres} text="postgres" />
-            <SkillItem logo={mysql} text="mysql" />
-            <SkillItem logo={serviceNow} text="servicenow" />
+            <TechSkill techName="python" />
+            <TechSkill techName="django" />
+            <TechSkill techName="html" />
+            <TechSkill techName="css" />
+            <TechSkill techName="sass" />
+            <TechSkill techName="javascript" />
+            <TechSkill techName="react" />
+            <TechSkill techName="aws" />
+            <TechSkill techName="docker" />
+            <TechSkill techName="postgres" />
+            <TechSkill techName="mysql" />
+            <TechSkill techName="servicenow" />
           </div>
         </div>
       </div>

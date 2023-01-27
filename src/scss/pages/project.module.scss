@@ -1,0 +1,57 @@
+@import "../variables";
+
+.projectPage {
+  background: linear-gradient(
+    0deg,
+    $color-primary-1 21%,
+    $color-primary-2 100%
+  );
+  min-height: 100vh;
+  padding: 5rem;
+  color: $color-white;
+  font-family: "Poppins", sans-serif;
+
+  h1 {
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+  }
+
+  h3 {
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+  }
+
+  .carousel {
+    width: 50%;
+    margin: 0 auto;
+    @media only screen and (max-width: $breakpoint) {
+      width: 100%;
+    }
+  }
+
+  .about {
+    margin: 3rem 0rem;
+  }
+
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    .techstack {
+      padding-left: 1rem;
+      width: 30%;
+      @media only screen and (max-width: $breakpoint) {
+        width: 100%;
+      }
+    }
+    .desc {
+      width: 70%;
+      li {
+        padding: 0.25rem;
+      }
+    }
+    .skill {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}

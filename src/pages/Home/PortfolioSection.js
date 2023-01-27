@@ -10,10 +10,12 @@ import tripYork from "../../assets/images/portfolio/trip_york/1.png";
 import tass from "../../assets/images/portfolio/tass/1.png";
 import toredo from "../../assets/images/portfolio/toredo/1.png";
 import { useLayoutEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function PortolioItem({ image, text, url }) {
+  const navigate = useNavigate();
   return (
-    <div className={styles.portfolioItem}>
+    <div className={styles.portfolioItem} onClick={(e) => navigate(url)}>
       <img src={image} />
       <span>{text}</span>
     </div>
@@ -136,15 +138,23 @@ export default function PortfolioSection() {
       <h1 className={styles.heading}>Portfolio</h1>
       <h3>FEATURED WORKS</h3>
       <div className={styles.portfolioItems}>
-        <PortolioItem image={hsSales} text="HS Sales" />
-        <PortolioItem image={tgt} text="The Good Trends" />
-        <PortolioItem image={tripYork} text="Trip York" />
-        <PortolioItem image={tass} text="Tass" />
-        <PortolioItem image={toredo} text="Toredo" />
-        <PortolioItem image={homesy} text="Homesy" />
-        <PortolioItem image={ecrawl} text="eCrawl" />
-        <PortolioItem image={interestMiner} text="Interest miner" />
-        <PortolioItem image={inibii} text="Inibii" />
+        <PortolioItem url="/project/hs_sales" image={hsSales} text="HS Sales" />
+        <PortolioItem url="/project/tgt" image={tgt} text="The Good Trends" />
+        <PortolioItem
+          url="/project/trip_york"
+          image={tripYork}
+          text="Trip York"
+        />
+        <PortolioItem url="/project/tass" image={tass} text="Tass" />
+        <PortolioItem url="/project/toredo" image={toredo} text="Toredo" />
+        <PortolioItem url="/project/homesy" image={homesy} text="Homesy" />
+        <PortolioItem url="/project/ecrawl" image={ecrawl} text="eCrawl" />
+        <PortolioItem
+          url="/project/interest_miner"
+          image={interestMiner}
+          text="Interest miner"
+        />
+        <PortolioItem url="/project/inibii" image={inibii} text="Inibii" />
 
         <PortolioItem image={sourceBox} text="Source box" />
       </div>

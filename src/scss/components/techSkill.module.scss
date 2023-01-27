@@ -1,0 +1,16 @@
+@import "../variables";
+
+.skillIcon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  color: $color-gray;
+  margin: 1rem;
+  width: 4rem;
+  transition: all 500ms;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.2);
+  }
+}
