@@ -80,19 +80,17 @@ function Testimonials() {
   const [index, setIndex] = useState(0);
 
   useLayoutEffect(() => {
-    if (loadingNext)
-      setTimeout(() => {
-        setIndex((index + 1) % data.length);
-        setLoadingNext(false);
-      }, 5);
+    if (loadingNext) {
+      setIndex((index + 1) % data.length);
+      setLoadingNext(false);
+    }
   }, [loadingNext]);
 
   useLayoutEffect(() => {
-    if (loadingPrev)
-      setTimeout(() => {
-        setIndex((index - 1 + data.length) % data.length);
-        setLoadingPrev(false);
-      }, 5);
+    if (loadingPrev) {
+      setIndex((index - 1 + data.length) % data.length);
+      setLoadingPrev(false);
+    }
   }, [loadingPrev]);
 
   const next = () => {
