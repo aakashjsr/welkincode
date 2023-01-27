@@ -8,8 +8,12 @@ import inibiiImg3 from "../../assets/images/portfolio/inibii/3.png";
 
 import Slider from "react-slick";
 import styles from "../../scss/pages/project.module.scss";
+import { useEffect } from "react";
 
 export default function Inibii() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const images = [inibiiImg1, inibiiImg2, inibiiImg3];
 
   const settings = {
@@ -18,6 +22,8 @@ export default function Inibii() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
   };
 
   return (
@@ -33,8 +39,8 @@ export default function Inibii() {
       <div className={styles.projectPage}>
         <div className={styles.carousel}>
           <Slider {...settings}>
-            {images.map((im) => (
-              <img src={im} />
+            {images.map((im, index) => (
+              <img key={index} src={im} />
             ))}
           </Slider>
         </div>

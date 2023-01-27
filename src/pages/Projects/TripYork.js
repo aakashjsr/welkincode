@@ -11,8 +11,12 @@ import tripYork6 from "../../assets/images/portfolio/trip_york/6.png";
 
 import Slider from "react-slick";
 import styles from "../../scss/pages/project.module.scss";
+import { useEffect } from "react";
 
 export default function TripYork() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const images = [
     tripYork1,
     tripYork2,
@@ -28,6 +32,8 @@ export default function TripYork() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
   };
 
   return (
@@ -43,8 +49,8 @@ export default function TripYork() {
       <div className={styles.projectPage}>
         <div className={styles.carousel}>
           <Slider {...settings}>
-            {images.map((im) => (
-              <img src={im} />
+            {images.map((im, index) => (
+              <img key={index} src={im} />
             ))}
           </Slider>
         </div>

@@ -14,8 +14,13 @@ import sourceBoxImg9 from "../../assets/images/portfolio/source_box/9.png";
 
 import Slider from "react-slick";
 import styles from "../../scss/pages/project.module.scss";
+import { useEffect } from "react";
 
 export default function SourceBox() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const images = [
     sourceBoxImg1,
     sourceBoxImg2,
@@ -34,6 +39,8 @@ export default function SourceBox() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
   };
 
   return (
@@ -49,8 +56,8 @@ export default function SourceBox() {
       <div className={styles.projectPage}>
         <div className={styles.carousel}>
           <Slider {...settings}>
-            {images.map((im) => (
-              <img src={im} />
+            {images.map((im, index) => (
+              <img key={index} src={im} />
             ))}
           </Slider>
         </div>

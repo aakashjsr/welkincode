@@ -16,9 +16,9 @@ import hsSales11 from "../../assets/images/portfolio/hs_sales/11.png";
 
 import Slider from "react-slick";
 import styles from "../../scss/pages/project.module.scss";
+import { useEffect } from "react";
 
 export default function HsSales() {
-  const metaTitle = "Hs Sales";
   const images = [
     hsSales1,
     hsSales2,
@@ -39,12 +39,18 @@ export default function HsSales() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
       <Helmet>
-        <title>WelkinCode - {metaTitle}</title>
+        <title>WelkinCode - Hs Sales</title>
         <meta
           name="description"
           content="I'm a freelance web developer. I develop full stack applications using django, python, react, javascript, docker and aws"
@@ -54,8 +60,8 @@ export default function HsSales() {
       <div className={styles.projectPage}>
         <div className={styles.carousel}>
           <Slider {...settings}>
-            {images.map((im) => (
-              <img src={im} />
+            {images.map((im, index) => (
+              <img key={index} src={im} />
             ))}
           </Slider>
         </div>

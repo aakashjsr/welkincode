@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet";
+import { useEffect } from "react";
 
 import TechSkill from "../../components/TechSkill";
 
@@ -16,6 +17,9 @@ import Slider from "react-slick";
 import styles from "../../scss/pages/project.module.scss";
 
 export default function Homesy() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const images = [
     homesyImg1,
     homesyImg2,
@@ -34,6 +38,8 @@ export default function Homesy() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
   };
 
   return (
@@ -49,8 +55,8 @@ export default function Homesy() {
       <div className={styles.projectPage}>
         <div className={styles.carousel}>
           <Slider {...settings}>
-            {images.map((im) => (
-              <img src={im} />
+            {images.map((im, index) => (
+              <img key={index} src={im} />
             ))}
           </Slider>
         </div>
