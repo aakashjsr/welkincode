@@ -1,26 +1,26 @@
 import styles from "../../scss/pages/home.module.scss";
-import profileImg from "../../assets/images/aakash.jpeg";
-import serviceNow from "../../assets/images/servicenow.png";
-import toptal from "../../assets/images/toptal.png";
-import codementor from "../../assets/images/codementor.jpeg";
-import lji from "../../assets/images/lji.jpeg";
-import jtg from "../../assets/images/jtg.jpeg";
-import reportgarden from "../../assets/images/reportgarden.png";
-import django from "../../assets/images/django.png";
-import docker from "../../assets/images/docker.png";
-import html from "../../assets/images/html.png";
-import css from "../../assets/images/css.jpeg";
-import sass from "../../assets/images/sass.png";
-import js from "../../assets/images/js.png";
-import react from "../../assets/images/react.png";
-import python from "../../assets/images/python.jpeg";
-import aws from "../../assets/images/aws.jpeg";
-import postgres from "../../assets/images/postgres.png";
-import mysql from "../../assets/images/mysql.png";
-import linkedin from "../../assets/images/linkedin.png";
-import fiverr from "../../assets/images/fiverr.png";
-import medium from "../../assets/images/medium.png";
-import gmail from "../../assets/images/gmail.png";
+// import profileImg from "../../assets/images/aakash.jpeg";
+import profileImg from "../../assets/images/dp.jpeg";
+import serviceNow from "../../assets/images/company/servicenow.png";
+import toptal from "../../assets/images/company/toptal.png";
+import codementor from "../../assets/images/company/codementor.jpeg";
+import lji from "../../assets/images/company/lji.jpeg";
+import jtg from "../../assets/images/company/jtg.jpeg";
+import reportgarden from "../../assets/images/company/reportgarden.png";
+import django from "../../assets/images/skill/django.png";
+import docker from "../../assets/images/skill/docker.png";
+import html from "../../assets/images/skill/html.png";
+import css from "../../assets/images/skill/css.jpeg";
+import sass from "../../assets/images/skill/sass.png";
+import js from "../../assets/images/skill/js.png";
+import react from "../../assets/images/skill/react.png";
+import python from "../../assets/images/skill/python.jpeg";
+import aws from "../../assets/images/skill/aws.jpeg";
+import postgres from "../../assets/images/skill/postgres.png";
+import mysql from "../../assets/images/skill/mysql.png";
+import linkedin from "../../assets/images/company/linkedin.png";
+import fiverr from "../../assets/images/company/fiverr.png";
+import gmail from "../../assets/images/company/gmail.png";
 
 function ExperienceRow({ companyName, role, tenure, icon }) {
   return (
@@ -66,7 +66,7 @@ export default function AboutSection() {
       <h1 className={styles.heading}>About</h1>
       <div className={styles.myInfo}>
         <div className={styles.bioImg}>
-          <img src={profileImg} height="300rem" />
+          <img src={profileImg} height="250rem" />
           <div className={styles.socialSection}>
             <SocialMediaItem
               icon={linkedin}
