@@ -1,44 +1,37 @@
 import { Helmet } from "react-helmet";
-import { useParams } from "react-router-dom";
 
-import TechSkill from "../components/TechSkill";
+import TechSkill from "../../components/TechSkill";
 
-import hsSales1 from "../assets/images/portfolio/hs_sales/1.png";
-import hsSales2 from "../assets/images/portfolio/hs_sales/2.png";
-import hsSales3 from "../assets/images/portfolio/hs_sales/3.png";
-import hsSales4 from "../assets/images/portfolio/hs_sales/4.png";
-import hsSales5 from "../assets/images/portfolio/hs_sales/5.png";
-import hsSales6 from "../assets/images/portfolio/hs_sales/6.png";
-import hsSales7 from "../assets/images/portfolio/hs_sales/7.png";
-import hsSales8 from "../assets/images/portfolio/hs_sales/8.png";
-import hsSales9 from "../assets/images/portfolio/hs_sales/9.png";
-import hsSales10 from "../assets/images/portfolio/hs_sales/10.png";
-import hsSales11 from "../assets/images/portfolio/hs_sales/11.png";
+import hsSales1 from "../../assets/images/portfolio/hs_sales/1.png";
+import hsSales2 from "../../assets/images/portfolio/hs_sales/2.png";
+import hsSales3 from "../../assets/images/portfolio/hs_sales/3.png";
+import hsSales4 from "../../assets/images/portfolio/hs_sales/4.png";
+import hsSales5 from "../../assets/images/portfolio/hs_sales/5.png";
+import hsSales6 from "../../assets/images/portfolio/hs_sales/6.png";
+import hsSales7 from "../../assets/images/portfolio/hs_sales/7.png";
+import hsSales8 from "../../assets/images/portfolio/hs_sales/8.png";
+import hsSales9 from "../../assets/images/portfolio/hs_sales/9.png";
+import hsSales10 from "../../assets/images/portfolio/hs_sales/10.png";
+import hsSales11 from "../../assets/images/portfolio/hs_sales/11.png";
 
 import Slider from "react-slick";
-import styles from "../scss/pages/project.module.scss";
+import styles from "../../scss/pages/project.module.scss";
 
-export default function Project() {
-  const { slug } = useParams();
-
-  const projectMap = {
-    hs_sales: {
-      metaTitle: "Hs Sales",
-      images: [
-        hsSales1,
-        hsSales2,
-        hsSales3,
-        hsSales4,
-        hsSales5,
-        hsSales6,
-        hsSales7,
-        hsSales8,
-        hsSales9,
-        hsSales10,
-        hsSales11,
-      ],
-    },
-  };
+export default function HsSales() {
+  const metaTitle = "Hs Sales";
+  const images = [
+    hsSales1,
+    hsSales2,
+    hsSales3,
+    hsSales4,
+    hsSales5,
+    hsSales6,
+    hsSales7,
+    hsSales8,
+    hsSales9,
+    hsSales10,
+    hsSales11,
+  ];
 
   const settings = {
     dots: true,
@@ -51,7 +44,7 @@ export default function Project() {
   return (
     <>
       <Helmet>
-        <title>WelkinCode - {projectMap[slug].metaTitle}</title>
+        <title>WelkinCode - {metaTitle}</title>
         <meta
           name="description"
           content="I'm a freelance web developer. I develop full stack applications using django, python, react, javascript, docker and aws"
@@ -61,7 +54,7 @@ export default function Project() {
       <div className={styles.projectPage}>
         <div className={styles.carousel}>
           <Slider {...settings}>
-            {projectMap[slug].images.map((im) => (
+            {images.map((im) => (
               <img src={im} />
             ))}
           </Slider>
