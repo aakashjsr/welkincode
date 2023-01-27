@@ -1,6 +1,7 @@
 import styles from "../scss/components/header.module.scss";
 import Logo from "../assets/images/logo.png";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const scrollToSection = (e, target) => {
@@ -14,6 +15,7 @@ export default function Header() {
 
   const path = window.location.pathname;
   const [showMenu, setShowMenu] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (path === "/") setShowMenu(true);
@@ -31,9 +33,11 @@ export default function Header() {
       </div>
 
       <div className={styles.logoSection}>
-        <a href="/">
-          <img className={styles.logo} src={Logo} />
-        </a>
+        <img
+          className={styles.logo}
+          src={Logo}
+          onClick={(e) => navigate("/")}
+        />
       </div>
       <div className={styles.linkContainer}>
         {showMenu && (

@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import Layout from "./Layout";
 import LostPage from "./pages/404";
 import Home from "./pages/Home/Home";
 import Ecrawl from "./pages/Projects/Ecrawl";
@@ -12,49 +13,54 @@ import TripYork from "./pages/Projects/TripYork";
 
 const AppRouter = createBrowserRouter([
   {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/project",
+    element: <Layout />,
     children: [
       {
-        path: "hs_sales",
-        element: <HsSales />,
+        path: "/",
+        element: <Home />,
       },
       {
-        path: "interest_miner",
-        element: <InterestMiner />,
+        path: "/project",
+        children: [
+          {
+            path: "hs_sales",
+            element: <HsSales />,
+          },
+          {
+            path: "interest_miner",
+            element: <InterestMiner />,
+          },
+          {
+            path: "tgt",
+            element: <TheGoodTrends />,
+          },
+          {
+            path: "sourcebox",
+            element: <SourceBox />,
+          },
+          {
+            path: "homesy",
+            element: <Homesy />,
+          },
+          {
+            path: "ecrawl",
+            element: <Ecrawl />,
+          },
+          {
+            path: "trip_york",
+            element: <TripYork />,
+          },
+          {
+            path: "inibii",
+            element: <Inibii />,
+          },
+        ],
       },
       {
-        path: "tgt",
-        element: <TheGoodTrends />,
-      },
-      {
-        path: "sourcebox",
-        element: <SourceBox />,
-      },
-      {
-        path: "homesy",
-        element: <Homesy />,
-      },
-      {
-        path: "ecrawl",
-        element: <Ecrawl />,
-      },
-      {
-        path: "trip_york",
-        element: <TripYork />,
-      },
-      {
-        path: "inibii",
-        element: <Inibii />,
+        path: "*",
+        element: <LostPage />,
       },
     ],
-  },
-  {
-    path: "*",
-    element: <LostPage />,
   },
 ]);
 
