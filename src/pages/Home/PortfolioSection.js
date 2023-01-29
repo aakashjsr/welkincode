@@ -121,7 +121,7 @@ function Testimonials() {
         <div className={styles.content}>
           <blockquote>❝</blockquote>
           <div>{data[index].text}</div>
-          <div>{data[index].user}</div>
+          <div>{data[index].person}</div>
           <div>{data[index].role}</div>
         </div>
       )}
