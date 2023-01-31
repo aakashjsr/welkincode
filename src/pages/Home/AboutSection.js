@@ -1,5 +1,5 @@
 import styles from "../../scss/pages/home.module.scss";
-import profileImg from "../../assets/images/dp.jpeg";
+import profileImg from "../../assets/images/dp2.jpeg";
 import serviceNow from "../../assets/images/company/servicenow.png";
 import toptal from "../../assets/images/company/toptal.png";
 import codementor from "../../assets/images/company/codementor.jpeg";

@@ -7,7 +7,8 @@ import Homesy from "./pages/Projects/Homesy";
 import HsSales from "./pages/Projects/HsSales";
 import Inibii from "./pages/Projects/Inibii";
 import InterestMiner from "./pages/Projects/InterestMiner";
-import SourceBox from "./pages/Projects/SourceBox";
+import Tass from "./pages/Projects/Tass";
+import Toredo from "./pages/Projects/Toredo";
 import TheGoodTrends from "./pages/Projects/TheGoodTrends";
 import TripYork from "./pages/Projects/TripYork";
 
@@ -35,8 +36,12 @@ const AppRouter = createBrowserRouter([
             element: <TheGoodTrends />,
           },
           {
-            path: "sourcebox",
-            element: <SourceBox />,
+            path: "tass",
+            element: <Tass />,
+          },
+          {
+            path: "toredo",
+            element: <Toredo />,
           },
           {
             path: "homesy",

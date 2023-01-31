@@ -130,6 +130,9 @@ section {
       img {
         border-radius: 50%;
       }
+      &>img {
+        border: 1px solid $color-gray;
+      }
     }
     .socialSection {
       display: flex;

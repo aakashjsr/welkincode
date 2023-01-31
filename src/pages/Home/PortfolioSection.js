@@ -156,11 +156,6 @@ export default function PortfolioSection() {
         />
         <PortolioItem url="/project/inibii" image={inibii} text="Inibii" />
 
-        <PortolioItem
-          url="/project/sourcebox"
-          image={sourceBox}
-          text="Source box"
-        />
       </div>
       <h3>TESTIMONIALS</h3>
       <Testimonials />
