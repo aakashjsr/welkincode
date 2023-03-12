@@ -8,12 +8,7 @@ section {
 .heroBanner {
   position: relative;
   padding-top: 4rem;
-  background: $color-primary-1;
-  background: linear-gradient(
-    0deg,
-    $color-primary-1 21%,
-    $color-primary-2 100%
-  );
+  background: $color-primary;
 
   img {
     width: 100%;
@@ -130,7 +125,7 @@ section {
       img {
         border-radius: 50%;
       }
-      &>img {
+      & > img {
         border: 1px solid $color-gray;
       }
     }

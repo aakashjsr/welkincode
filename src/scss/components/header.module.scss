@@ -21,7 +21,9 @@ nav {
   .linkContainer {
     margin: 0 1%;
     a {
-      color: $color-white;
+      color: $color-info;
+      font-size: bold;
+      text-shadow: 0 0 20px $color-white;
       text-decoration: none;
       padding: 10px;
       text-transform: uppercase;

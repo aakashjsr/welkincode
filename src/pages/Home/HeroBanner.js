@@ -18,6 +18,7 @@ export default function HeroBanner() {
           We help you turn ideas into reality. Let’s build something amazing
           together!
         </h3>
+        <div>div</div>
       </div>
 
       <div className={styles.bannerImage}>
