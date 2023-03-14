@@ -1,6 +1,3 @@
-import styles from "../../scss/pages/home.module.scss";
-
-import homeBackground from "../../assets/images/homeBackground.png";
 import Particles from "../../components/Particles";
 import { Button, Col, Row } from "react-bootstrap";
 import bg from "../../assets/images/bg.png";
@@ -9,6 +6,7 @@ import Image from "react-bootstrap/Image";
 export default function HeroBanner() {
   return (
     <section id="home" className="mt-5 pt-5 bg-primary">
+      {/* <Particles /> */}
       <Row className="p-3 p-sm-5 mx-0 mx-sm-5 align-items-center">
         <Col xs="12" md="12" lg="7">
           <h1 className="text-light section-title">
