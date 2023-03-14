@@ -9,37 +9,6 @@
   }
 }
 
-nav {
-  position: absolute;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  margin-bottom: 2rem;
-
-  .linkContainer {
-    margin: 0 1%;
-    a {
-      color: $color-info;
-      font-size: bold;
-      text-shadow: 0 0 20px $color-white;
-      text-decoration: none;
-      padding: 10px;
-      text-transform: uppercase;
-      transition: transform 500ms;
-      display: inline-block;
-      &:hover {
-        transform: scale(1.2);
-      }
-    }
-
-    &:last-child {
-      text-align: right;
-    }
-  }
-}
-
 .logo {
   width: 120px;
   cursor: pointer;

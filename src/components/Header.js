@@ -16,7 +16,7 @@ export default function Header() {
   return (
     <Navbar expand="sm" className="bg-primary" fixed="top" variant="dark">
       <Container fluid>
-        <Navbar.Brand href="#home" className="text-warning fs-1">
+        <Navbar.Brand href="/#home" className="text-warning fs-1">
           WelkinCode
         </Navbar.Brand>
 
@@ -27,13 +27,13 @@ export default function Header() {
           className="justify-content-end align-items-center"
         >
           <Nav className="align-items-center">
-            <Nav.Link href="#about" className="text-white">
+            <Nav.Link href="/#about" className="text-white">
               About
             </Nav.Link>
-            <Nav.Link href="#portfolio" className="text-white">
+            <Nav.Link href="/#portfolio" className="text-white">
               Portfolio
             </Nav.Link>
-            <Nav.Link href="#about" className="text-info">
+            <Nav.Link href="/#about" className="text-info">
               <Button variant="secondary" className="text-white rounded-pill">
                 Contact
               </Button>

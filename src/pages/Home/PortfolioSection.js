@@ -4,21 +4,27 @@ import ecrawl from "../../assets/images/portfolio/ecrawl/1.png";
 import homesy from "../../assets/images/portfolio/homesy/1.png";
 import inibii from "../../assets/images/portfolio/inibii/1.png";
 import interestMiner from "../../assets/images/portfolio/interest_miner/1.png";
-import sourceBox from "../../assets/images/portfolio/source_box/1.png";
 import tgt from "../../assets/images/portfolio/tgt/1.png";
 import tripYork from "../../assets/images/portfolio/trip_york/1.png";
 import tass from "../../assets/images/portfolio/tass/1.png";
 import toredo from "../../assets/images/portfolio/toredo/1.png";
-import { useLayoutEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Col, Container, Image, Row } from "react-bootstrap";
+import { useLayoutEffect, useState } from "react";
 
 function PortolioItem({ image, text, url }) {
   const navigate = useNavigate();
   return (
-    <div className={styles.portfolioItem} onClick={(e) => navigate(url)}>
-      <img src={image} />
-      <span>{text}</span>
-    </div>
+    <Col
+      xs="6"
+      sm="6"
+      lg="4"
+      className={`mb-5 text-center p-2 p-sm-4 ${styles.portfolioEntry}`}
+      onClick={(e) => navigate(url)}
+    >
+      <Image fluid src={image} className="rounded-3 mb-4" />
+      <h5>{text}</h5>
+    </Col>
   );
 }
 
@@ -121,8 +127,8 @@ function Testimonials() {
         <div className={styles.content}>
           <blockquote>❝</blockquote>
           <div>{data[index].text}</div>
-          <div>{data[index].person}</div>
-          <div>{data[index].role}</div>
+          <div className="text-warning">{data[index].person}</div>
+          <div className="text-warning">{data[index].role}</div>
         </div>
       )}
       <div className={styles.buttonContainer} onClick={next}>
@@ -134,10 +140,10 @@ function Testimonials() {
 
 export default function PortfolioSection() {
   return (
-    <section id="portfolio" className={styles.portfolioSection}>
-      <h1 className={styles.heading}>Portfolio</h1>
-      <h3>FEATURED WORKS</h3>
-      <div className={styles.portfolioItems}>
+    <Container fluid id="portfolio" className="p-2 p-md-4 bg-info">
+      <h1 className="text-center">Portfolio</h1>
+
+      <Row className="p-1">
         <PortolioItem url="/project/hs_sales" image={hsSales} text="HS Sales" />
         <PortolioItem url="/project/tgt" image={tgt} text="The Good Trends" />
         <PortolioItem
@@ -155,10 +161,15 @@ export default function PortfolioSection() {
           text="Interest miner"
         />
         <PortolioItem url="/project/inibii" image={inibii} text="Inibii" />
+      </Row>
 
-      </div>
-      <h3>TESTIMONIALS</h3>
-      <Testimonials />
-    </section>
+      <Row>
+        <h1 className="text-center mt-5">Testimonials</h1>
+
+        <Col>
+          <Testimonials />
+        </Col>
+      </Row>
+    </Container>
   );
 }

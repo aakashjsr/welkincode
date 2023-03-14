@@ -99,7 +99,7 @@ const experienceData = [
 
 export default function AboutSection() {
   return (
-    <Container fluid className="p-2 p-md-4" id="about">
+    <Container fluid className="p-2 p-md-4 bg-white" id="about">
       <Row className="mb-5">
         <h1 className="text-secondary text-center">About</h1>
       </Row>
@@ -179,18 +179,18 @@ export default function AboutSection() {
 
             <h3 className="mt-5 text-secondary">SKILLS</h3>
             <Row>
-              <TechSkill techName="python" />
-              <TechSkill techName="django" />
-              <TechSkill techName="html" />
-              <TechSkill techName="css" />
-              <TechSkill techName="sass" />
-              <TechSkill techName="javascript" />
-              <TechSkill techName="react" />
-              <TechSkill techName="aws" />
-              <TechSkill techName="docker" />
-              <TechSkill techName="postgres" />
-              <TechSkill techName="mysql" />
-              <TechSkill techName="servicenow" />
+              <TechSkill textColor="#000" techName="python" />
+              <TechSkill textColor="#000" techName="django" />
+              <TechSkill textColor="#000" techName="html" />
+              <TechSkill textColor="#000" techName="css" />
+              <TechSkill textColor="#000" techName="sass" />
+              <TechSkill textColor="#000" techName="javascript" />
+              <TechSkill textColor="#000" techName="react" />
+              <TechSkill textColor="#000" techName="aws" />
+              <TechSkill textColor="#000" techName="docker" />
+              <TechSkill textColor="#000" techName="postgres" />
+              <TechSkill textColor="#000" techName="mysql" />
+              <TechSkill textColor="#000" techName="servicenow" />
             </Row>
           </div>
         </Col>
