@@ -51,7 +51,7 @@ function SocialMediaItem({ icon, url }) {
 
 export default function AboutSection() {
   return (
-    <section id="about" className={styles.aboutSection}>
+    <section id="about" className={`${styles.aboutSection}`}>
       <h1 className={styles.heading}>About</h1>
       <div className={styles.myInfo}>
         <div className={styles.bioImg}>

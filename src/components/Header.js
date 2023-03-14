@@ -2,34 +2,45 @@ import styles from "../scss/components/header.module.scss";
 import Logo from "../assets/images/logo.png";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {
+  Button,
+  Col,
+  Container,
+  Nav,
+  Navbar,
+  NavDropdown,
+  Row,
+} from "react-bootstrap";
 
 export default function Header() {
-  const navigate = useNavigate();
-  const scrollToSection = (e, section) => {
-    e.preventDefault();
-    navigate(`/?section=${section}`);
-  };
-
   return (
-    <nav>
-      <div className={styles.linkContainer}>
-        <a href="" onClick={(e) => scrollToSection(e, "about")}>
-          About
-        </a>
-      </div>
+    <Navbar expand="sm" className="bg-primary" fixed="top" variant="dark">
+      <Container fluid>
+        <Navbar.Brand href="#home" className="text-warning fs-1">
+          WelkinCode
+        </Navbar.Brand>
 
-      <div className={styles.logoSection}>
-        <img
-          className={styles.logo}
-          src={Logo}
-          onClick={(e) => navigate("/")}
-        />
-      </div>
-      <div className={styles.linkContainer}>
-        <a href="" onClick={(e) => scrollToSection(e, "portfolio")}>
-          Portfolio
-        </a>
-      </div>
-    </nav>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
+        <Navbar.Collapse
+          id="basic-navbar-nav"
+          className="justify-content-end align-items-center"
+        >
+          <Nav className="align-items-center">
+            <Nav.Link href="#about" className="text-white">
+              About
+            </Nav.Link>
+            <Nav.Link href="#portfolio" className="text-white">
+              Portfolio
+            </Nav.Link>
+            <Nav.Link href="#about" className="text-info">
+              <Button variant="secondary" className="text-white rounded-pill">
+                Contact
+              </Button>
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }

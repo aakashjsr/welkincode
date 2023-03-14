@@ -7,23 +7,13 @@ import HeroBanner from "./HeroBanner";
 import PortfolioSection from "./PortfolioSection";
 
 export default function Home() {
-  const [searchParams] = useSearchParams();
-  const section = searchParams.get("section");
-
-  useEffect(() => {
-    if (!section) return;
-    document.getElementById(section).scrollIntoView({
-      behavior: "smooth",
-    });
-  }, [section]);
-
   return (
     <>
       <Helmet>
         <title>WelkinCode - Freelance Web development</title>
         <meta
           name="description"
-          content="I'm a freelance full stack developer who builds scalable web applications using django, python, react, javascript, docker and aws"
+          content="Launch your web application today!. We develop scalable web applications using django, python, react, javascript, docker and aws"
         />
       </Helmet>
 
