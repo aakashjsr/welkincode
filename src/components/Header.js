@@ -11,7 +11,11 @@ export default function Header() {
       <Container fluid>
         <ContactModal show={showModal} setShow={setShowModal} />
         <Navbar.Brand
-          onClick={(e) => navigate("/#home")}
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            navigate("/#home");
+          }}
           className="text-warning fs-1"
         >
           WelkinCode
