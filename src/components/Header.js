@@ -13,10 +13,14 @@ import {
 } from "react-bootstrap";
 
 export default function Header() {
+  const navigate = useNavigate();
   return (
     <Navbar expand="sm" className="bg-primary" fixed="top" variant="dark">
       <Container fluid>
-        <Navbar.Brand href="/#home" className="text-warning fs-1">
+        <Navbar.Brand
+          onClick={(e) => navigate("/#home")}
+          className="text-warning fs-1"
+        >
           WelkinCode
         </Navbar.Brand>
 
