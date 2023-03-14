@@ -2,10 +2,14 @@ import Particles from "../../components/Particles";
 import { Button, Col, Row } from "react-bootstrap";
 import bg from "../../assets/images/bg.png";
 import Image from "react-bootstrap/Image";
+import ContactModal from "../ContactModal";
+import { useState } from "react";
 
 export default function HeroBanner() {
+  const [showModal, setShowModal] = useState(false);
   return (
     <section id="home" className="mt-5 pt-5 bg-primary">
+      <ContactModal show={showModal} setShow={setShowModal} />
       <Particles />
       <Row className="p-3 p-sm-5 mx-0 mx-sm-5 align-items-center">
         <Col xs="12" md="12" lg="7">
@@ -24,7 +28,11 @@ export default function HeroBanner() {
             together!
           </h5>
           <div className="mt-5">
-            <Button variant="secondary" className="text-white p-4 rounded-pill">
+            <Button
+              variant="secondary"
+              className="text-white p-4 rounded-pill"
+              onClick={(e) => setShowModal(true)}
+            >
               Build your web app today!
             </Button>
           </div>
