@@ -19,7 +19,7 @@ export default function ProjectTemplate({
   }, []);
 
   return (
-    <Container fluid className="pt-2 p-md-5 mt-5 bg-info min-vh-100">
+    <Container fluid className="pt-5 p-md-5 mt-5 bg-info min-vh-100">
       <Helmet>
         <title>WelkinCode - {pageTitle}</title>
         <meta name="description" content={metaContent} />
