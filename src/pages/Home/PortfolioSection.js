@@ -23,7 +23,7 @@ function PortolioItem({ image, text, url }) {
       onClick={(e) => navigate(url)}
     >
       <Image fluid src={image} className="rounded-3 mb-4" />
-      <h5>{text}</h5>
+      <h4>{text}</h4>
     </Col>
   );
 }
@@ -140,7 +140,7 @@ function Testimonials() {
 
 export default function PortfolioSection() {
   return (
-    <Container fluid id="portfolio" className="p-2 p-md-4 bg-info">
+    <Container fluid id="portfolio" className="p-2 p-md-4 bg-info text-dark">
       <h1 className="text-center">Portfolio</h1>
 
       <Row className="p-1">

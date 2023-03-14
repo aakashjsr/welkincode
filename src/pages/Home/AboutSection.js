@@ -101,7 +101,7 @@ export default function AboutSection() {
   return (
     <Container fluid className="p-2 p-md-4 bg-white" id="about">
       <Row className="mb-5">
-        <h1 className="text-secondary text-center">About</h1>
+        <h1 className="text-primary text-center">About</h1>
       </Row>
 
       <Row className="mt-5">
@@ -133,7 +133,9 @@ export default function AboutSection() {
                 </Col>
                 <Col xs="8" className="text-start">
                   <div>
-                    {item.companyName} ({item.tenure})
+                    <b>
+                      {item.companyName} ({item.tenure})
+                    </b>
                   </div>
                   <div>{item.role}</div>
                 </Col>
@@ -164,7 +166,7 @@ export default function AboutSection() {
 
           {/* skills section */}
           <div className="mt-5">
-            <h3 className="text-secondary">ACHIEVEMENTS</h3>
+            <h3 className="">ACHIEVEMENTS</h3>
             <ul>
               <li>
                 Single-handedly developed a marketplace platform that raised
@@ -177,7 +179,7 @@ export default function AboutSection() {
               <li>100% happy and satisfied clients around the globe</li>
             </ul>
 
-            <h3 className="mt-5 text-secondary">SKILLS</h3>
+            <h3 className="mt-5">SKILLS</h3>
             <Row>
               <TechSkill textColor="#000" techName="python" />
               <TechSkill textColor="#000" techName="django" />

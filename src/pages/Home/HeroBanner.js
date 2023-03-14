@@ -6,12 +6,14 @@ import Image from "react-bootstrap/Image";
 export default function HeroBanner() {
   return (
     <section id="home" className="mt-5 pt-5 bg-primary">
-      {/* <Particles /> */}
+      <Particles />
       <Row className="p-3 p-sm-5 mx-0 mx-sm-5 align-items-center">
         <Col xs="12" md="12" lg="7">
           <h1 className="text-light section-title">
-            Fullstack Development. That's <i>Fast</i>, <i>Precise</i> and{" "}
-            <i>Reliable</i>!
+            Fullstack Development. That's{" "}
+            <span className="text-warning">Fast</span>,{" "}
+            <span className="text-secondary">Precise</span> and{" "}
+            <span className="text-success">Reliable!</span>
           </h1>
           <h5 className="text-light mt-5 fs-5">
             Web Design is more than just making things look pretty. It’s about
