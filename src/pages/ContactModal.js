@@ -1,4 +1,8 @@
-import { Button, Col, Form, Image, Modal, Row } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import Image from "react-bootstrap/Image";
+import Modal from "react-bootstrap/Modal";
+import Row from "react-bootstrap/Row";
 import { useForm, ValidationError } from "@formspree/react";
 import RocketImg from "../assets/images/rocket.png";
 

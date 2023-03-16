@@ -4,7 +4,9 @@ import TechSkill from "../../components/TechSkill";
 
 import Carousel from "react-bootstrap/Carousel";
 import { useEffect } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
 
 export default function ProjectTemplate({
   images,
@@ -30,9 +32,9 @@ export default function ProjectTemplate({
           {images.map((im, index) => (
             <Carousel.Item key={index}>
               <img className="d-block w-100" src={im} />
-              <Carousel.Caption>
+              {/* <Carousel.Caption>
                 <p>App demo</p>
-              </Carousel.Caption>
+              </Carousel.Caption> */}
             </Carousel.Item>
           ))}
         </Carousel>

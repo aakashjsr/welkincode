@@ -1,5 +1,7 @@
 import Particles from "../../components/Particles";
-import { Button, Col, Row } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import bg from "../../assets/images/bg.png";
 import Image from "react-bootstrap/Image";
 import ContactModal from "../ContactModal";

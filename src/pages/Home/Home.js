@@ -1,6 +1,4 @@
-import { useEffect } from "react";
 import { Helmet } from "react-helmet";
-import { useSearchParams } from "react-router-dom";
 import styles from "../../scss/pages/home.module.scss";
 import AboutSection from "./AboutSection";
 import HeroBanner from "./HeroBanner";

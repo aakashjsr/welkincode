@@ -1,0 +1,27 @@
+.headerContactBtn {
+  overflow: hidden;
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    background: linear-gradient(90deg, transparent, white, transparent);
+    animation: buttonShine 4s linear 0s infinite;
+  }
+}
+
+@keyframes buttonShine {
+  0% {
+    left: -100%;
+  }
+  70% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}

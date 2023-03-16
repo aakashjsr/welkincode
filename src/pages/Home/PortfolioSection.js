@@ -9,15 +9,18 @@ import tripYork from "../../assets/images/portfolio/trip_york/1.png";
 import tass from "../../assets/images/portfolio/tass/1.png";
 import toredo from "../../assets/images/portfolio/toredo/1.png";
 import { useNavigate } from "react-router-dom";
-import { Col, Container, Image, Row } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Image from "react-bootstrap/Image";
 import { useLayoutEffect, useState } from "react";
 
 function PortolioItem({ image, text, url }) {
   const navigate = useNavigate();
   return (
     <Col
-      xs="6"
-      sm="6"
+      xs="12"
+      md="6"
       lg="4"
       className={`mb-5 text-center p-2 p-sm-4 ${styles.portfolioEntry}`}
       onClick={(e) => navigate(url)}

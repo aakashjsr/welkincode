@@ -1,11 +1,21 @@
-import styles from "../scss/pages/404.module.scss";
+import Row from "react-bootstrap/Row";
+import Button from "react-bootstrap/Button";
+import { useNavigate } from "react-router-dom";
 
 export default function LostPage() {
+  const navigate = useNavigate();
   return (
-    <div className={styles.container}>
-      <h1>404</h1>
-      <h2>Page Not Found</h2>
-      <a href="/">Back To Home</a>
-    </div>
+    <Row className="vh-100 vw-100 bg-primary text-white align-items-center">
+      <div className="text-center">
+        <span className="text-white fs-1">404</span>
+        <h2 className="text-white fs-4">Page Not Found</h2>
+        <Button
+          className="text-white bg-secondary rounded-pill mt-4"
+          onClick={(e) => navigate("/")}
+        >
+          Back To Home
+        </Button>
+      </div>
+    </Row>
   );
 }

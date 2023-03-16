@@ -10,7 +10,11 @@ import linkedin from "../../assets/images/company/linkedin.png";
 import fiverr from "../../assets/images/company/fiverr.png";
 import gmail from "../../assets/images/company/gmail.png";
 import TechSkill from "../../components/TechSkill";
-import { Col, Container, Image, Row } from "react-bootstrap";
+
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Image from "react-bootstrap/Image";
+import Container from "react-bootstrap/Container";
 
 function ExperienceRow({ companyName, role, tenure, icon }) {
   return (
