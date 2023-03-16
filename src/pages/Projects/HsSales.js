@@ -1,14 +1,14 @@
-import hsSales1 from "../../assets/images/portfolio/hs_sales/1.png";
-import hsSales2 from "../../assets/images/portfolio/hs_sales/2.png";
-import hsSales3 from "../../assets/images/portfolio/hs_sales/3.png";
-import hsSales4 from "../../assets/images/portfolio/hs_sales/4.png";
-import hsSales5 from "../../assets/images/portfolio/hs_sales/5.png";
-import hsSales6 from "../../assets/images/portfolio/hs_sales/6.png";
-import hsSales7 from "../../assets/images/portfolio/hs_sales/7.png";
-import hsSales8 from "../../assets/images/portfolio/hs_sales/8.png";
-import hsSales9 from "../../assets/images/portfolio/hs_sales/9.png";
-import hsSales10 from "../../assets/images/portfolio/hs_sales/10.png";
-import hsSales11 from "../../assets/images/portfolio/hs_sales/11.png";
+import hsSales1 from "../../assets/images/portfolio/hs_sales/1.webp";
+import hsSales2 from "../../assets/images/portfolio/hs_sales/2.webp";
+import hsSales3 from "../../assets/images/portfolio/hs_sales/3.webp";
+import hsSales4 from "../../assets/images/portfolio/hs_sales/4.webp";
+import hsSales5 from "../../assets/images/portfolio/hs_sales/5.webp";
+import hsSales6 from "../../assets/images/portfolio/hs_sales/6.webp";
+import hsSales7 from "../../assets/images/portfolio/hs_sales/7.webp";
+import hsSales8 from "../../assets/images/portfolio/hs_sales/8.webp";
+import hsSales9 from "../../assets/images/portfolio/hs_sales/9.webp";
+import hsSales10 from "../../assets/images/portfolio/hs_sales/10.webp";
+import hsSales11 from "../../assets/images/portfolio/hs_sales/11.webp";
 import ProjectTemplate from "./ProjectTemplate";
 import { useEffect } from "react";
 

@@ -1,6 +1,6 @@
-import inibiiImg1 from "../../assets/images/portfolio/inibii/1.png";
-import inibiiImg2 from "../../assets/images/portfolio/inibii/2.png";
-import inibiiImg3 from "../../assets/images/portfolio/inibii/3.png";
+import inibiiImg1 from "../../assets/images/portfolio/inibii/1.webp";
+import inibiiImg2 from "../../assets/images/portfolio/inibii/2.webp";
+import inibiiImg3 from "../../assets/images/portfolio/inibii/3.webp";
 
 import ProjectTemplate from "./ProjectTemplate";
 import { useEffect } from "react";

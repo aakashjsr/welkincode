@@ -1,11 +1,11 @@
 import ProjectTemplate from "./ProjectTemplate";
 
-import toredoImg1 from "../../assets/images/portfolio/toredo/1.png";
-import toredoImg2 from "../../assets/images/portfolio/toredo/2.png";
-import toredoImg3 from "../../assets/images/portfolio/toredo/3.png";
-import toredoImg4 from "../../assets/images/portfolio/toredo/4.png";
-import toredoImg5 from "../../assets/images/portfolio/toredo/5.png";
-import toredoImg6 from "../../assets/images/portfolio/toredo/6.png";
+import toredoImg1 from "../../assets/images/portfolio/toredo/1.webp";
+import toredoImg2 from "../../assets/images/portfolio/toredo/2.webp";
+import toredoImg3 from "../../assets/images/portfolio/toredo/3.webp";
+import toredoImg4 from "../../assets/images/portfolio/toredo/4.webp";
+import toredoImg5 from "../../assets/images/portfolio/toredo/5.webp";
+import toredoImg6 from "../../assets/images/portfolio/toredo/6.webp";
 
 import { useEffect } from "react";
 

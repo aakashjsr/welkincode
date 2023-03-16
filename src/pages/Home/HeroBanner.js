@@ -16,19 +16,19 @@ export default function HeroBanner() {
       <Row className="p-3 p-sm-5 mx-0 mx-sm-5 align-items-center">
         <Col xs="12" md="12" lg="7">
           <h1 className="text-light section-title">
-            Fullstack Development. That's{" "}
+            Fullstack Development, that's{" "}
             <span className="text-warning">Fast</span>,{" "}
             <span className="text-secondary">Precise</span> and{" "}
             <span className="text-success">Reliable!</span>
           </h1>
-          <h5 className="text-light mt-5 fs-5">
-            Web Design is more than just making things look pretty. It’s about
-            telling a story through the visuals that get your ideas across to
-            your customers. <br />
+          <h2 className="text-light mt-5 fs-5">
+            Web Development is more than just making things look pretty. It’s
+            about telling a story through the visuals that get your ideas across
+            to your customers. <br />
             <br />
             We help you turn ideas into reality. Let’s build something amazing
             together!
-          </h5>
+          </h2>
           <div className="mt-5">
             <Button
               variant="secondary"

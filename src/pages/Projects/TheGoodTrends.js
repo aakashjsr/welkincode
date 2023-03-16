@@ -1,12 +1,12 @@
 import ProjectTemplate from "./ProjectTemplate";
 
-import tgtImg1 from "../../assets/images/portfolio/tgt/1.png";
-import tgtImg2 from "../../assets/images/portfolio/tgt/2.png";
-import tgtImg3 from "../../assets/images/portfolio/tgt/3.png";
-import tgtImg4 from "../../assets/images/portfolio/tgt/4.png";
-import tgtImg5 from "../../assets/images/portfolio/tgt/5.png";
-import tgtImg6 from "../../assets/images/portfolio/tgt/6.png";
-import tgtImg7 from "../../assets/images/portfolio/tgt/7.png";
+import tgtImg1 from "../../assets/images/portfolio/tgt/1.webp";
+import tgtImg2 from "../../assets/images/portfolio/tgt/2.webp";
+import tgtImg3 from "../../assets/images/portfolio/tgt/3.webp";
+import tgtImg4 from "../../assets/images/portfolio/tgt/4.webp";
+import tgtImg5 from "../../assets/images/portfolio/tgt/5.webp";
+import tgtImg6 from "../../assets/images/portfolio/tgt/6.webp";
+import tgtImg7 from "../../assets/images/portfolio/tgt/7.webp";
 
 import { useEffect } from "react";
 

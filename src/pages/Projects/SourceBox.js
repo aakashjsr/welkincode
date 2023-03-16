@@ -1,14 +1,14 @@
 import ProjectTemplate from "./ProjectTemplate";
 
-import sourceBoxImg1 from "../../assets/images/portfolio/source_box/1.png";
-import sourceBoxImg2 from "../../assets/images/portfolio/source_box/2.png";
-import sourceBoxImg3 from "../../assets/images/portfolio/source_box/3.png";
-import sourceBoxImg4 from "../../assets/images/portfolio/source_box/4.png";
-import sourceBoxImg5 from "../../assets/images/portfolio/source_box/5.png";
-import sourceBoxImg6 from "../../assets/images/portfolio/source_box/6.png";
-import sourceBoxImg7 from "../../assets/images/portfolio/source_box/7.png";
-import sourceBoxImg8 from "../../assets/images/portfolio/source_box/8.png";
-import sourceBoxImg9 from "../../assets/images/portfolio/source_box/9.png";
+import sourceBoxImg1 from "../../assets/images/portfolio/source_box/1.webp";
+import sourceBoxImg2 from "../../assets/images/portfolio/source_box/2.webp";
+import sourceBoxImg3 from "../../assets/images/portfolio/source_box/3.webp";
+import sourceBoxImg4 from "../../assets/images/portfolio/source_box/4.webp";
+import sourceBoxImg5 from "../../assets/images/portfolio/source_box/5.webp";
+import sourceBoxImg6 from "../../assets/images/portfolio/source_box/6.webp";
+import sourceBoxImg7 from "../../assets/images/portfolio/source_box/7.webp";
+import sourceBoxImg8 from "../../assets/images/portfolio/source_box/8.webp";
+import sourceBoxImg9 from "../../assets/images/portfolio/source_box/9.webp";
 import { useEffect } from "react";
 
 export default function SourceBox() {

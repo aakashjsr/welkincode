@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 
-import eCrawlImg1 from "../../assets/images/portfolio/ecrawl/1.png";
-import eCrawlImg2 from "../../assets/images/portfolio/ecrawl/2.png";
-import eCrawlImg3 from "../../assets/images/portfolio/ecrawl/3.png";
-import eCrawlImg4 from "../../assets/images/portfolio/ecrawl/4.png";
-import eCrawlImg5 from "../../assets/images/portfolio/ecrawl/5.png";
+import eCrawlImg1 from "../../assets/images/portfolio/ecrawl/1.webp";
+import eCrawlImg2 from "../../assets/images/portfolio/ecrawl/2.webp";
+import eCrawlImg3 from "../../assets/images/portfolio/ecrawl/3.webp";
+import eCrawlImg4 from "../../assets/images/portfolio/ecrawl/4.webp";
+import eCrawlImg5 from "../../assets/images/portfolio/ecrawl/5.webp";
 
 import ProjectTemplate from "./ProjectTemplate";
 

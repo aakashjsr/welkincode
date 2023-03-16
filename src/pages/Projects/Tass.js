@@ -1,9 +1,9 @@
 import ProjectTemplate from "./ProjectTemplate";
 
-import tassImg1 from "../../assets/images/portfolio/tass/1.png";
-import tassImg2 from "../../assets/images/portfolio/tass/2.png";
-import tassImg3 from "../../assets/images/portfolio/tass/3.png";
-import tassImg4 from "../../assets/images/portfolio/tass/4.png";
+import tassImg1 from "../../assets/images/portfolio/tass/1.webp";
+import tassImg2 from "../../assets/images/portfolio/tass/2.webp";
+import tassImg3 from "../../assets/images/portfolio/tass/3.webp";
+import tassImg4 from "../../assets/images/portfolio/tass/4.webp";
 import { useEffect } from "react";
 
 export default function TripYork() {

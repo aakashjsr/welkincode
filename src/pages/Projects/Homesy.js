@@ -2,15 +2,15 @@ import { useEffect } from "react";
 
 import ProjectTemplate from "./ProjectTemplate";
 
-import homesyImg1 from "../../assets/images/portfolio/homesy/1.png";
-import homesyImg2 from "../../assets/images/portfolio/homesy/2.png";
-import homesyImg3 from "../../assets/images/portfolio/homesy/3.png";
-import homesyImg4 from "../../assets/images/portfolio/homesy/4.png";
-import homesyImg5 from "../../assets/images/portfolio/homesy/5.png";
-import homesyImg6 from "../../assets/images/portfolio/homesy/6.png";
-import homesyImg7 from "../../assets/images/portfolio/homesy/7.png";
-import homesyImg8 from "../../assets/images/portfolio/homesy/8.png";
-import homesyImg9 from "../../assets/images/portfolio/homesy/9.png";
+import homesyImg1 from "../../assets/images/portfolio/homesy/1.webp";
+import homesyImg2 from "../../assets/images/portfolio/homesy/2.webp";
+import homesyImg3 from "../../assets/images/portfolio/homesy/3.webp";
+import homesyImg4 from "../../assets/images/portfolio/homesy/4.webp";
+import homesyImg5 from "../../assets/images/portfolio/homesy/5.webp";
+import homesyImg6 from "../../assets/images/portfolio/homesy/6.webp";
+import homesyImg7 from "../../assets/images/portfolio/homesy/7.webp";
+import homesyImg8 from "../../assets/images/portfolio/homesy/8.webp";
+import homesyImg9 from "../../assets/images/portfolio/homesy/9.webp";
 
 export default function Homesy() {
   useEffect(() => {

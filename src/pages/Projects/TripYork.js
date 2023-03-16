@@ -1,11 +1,11 @@
 import ProjectTemplate from "./ProjectTemplate";
 
-import tripYork1 from "../../assets/images/portfolio/trip_york/1.png";
-import tripYork2 from "../../assets/images/portfolio/trip_york/2.png";
-import tripYork3 from "../../assets/images/portfolio/trip_york/3.png";
-import tripYork4 from "../../assets/images/portfolio/trip_york/4.png";
-import tripYork5 from "../../assets/images/portfolio/trip_york/5.png";
-import tripYork6 from "../../assets/images/portfolio/trip_york/6.png";
+import tripYork1 from "../../assets/images/portfolio/trip_york/1.webp";
+import tripYork2 from "../../assets/images/portfolio/trip_york/2.webp";
+import tripYork3 from "../../assets/images/portfolio/trip_york/3.webp";
+import tripYork4 from "../../assets/images/portfolio/trip_york/4.webp";
+import tripYork5 from "../../assets/images/portfolio/trip_york/5.webp";
+import tripYork6 from "../../assets/images/portfolio/trip_york/6.webp";
 
 import { useEffect } from "react";
 

@@ -7,6 +7,8 @@ import { useEffect } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
+import Breadcrumb from "react-bootstrap/Breadcrumb";
+import { useNavigate } from "react-router-dom";
 
 export default function ProjectTemplate({
   images,
@@ -19,6 +21,7 @@ export default function ProjectTemplate({
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const navigate = useNavigate();
 
   return (
     <Container fluid className="pt-5 p-md-5 mt-5 bg-info min-vh-100">
@@ -26,9 +29,20 @@ export default function ProjectTemplate({
         <title>WelkinCode - {pageTitle}</title>
         <meta name="description" content={metaContent} />
       </Helmet>
-
+      <Breadcrumb>
+        <Breadcrumb.Item
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            navigate("/");
+          }}
+        >
+          Home
+        </Breadcrumb.Item>
+        <Breadcrumb.Item active>{pageTitle}</Breadcrumb.Item>
+      </Breadcrumb>
       <div className="w-75 text-center m-auto">
-        <Carousel variant="dark" fade>
+        <Carousel variant="dark" keyboard touch interval={3000}>
           {images.map((im, index) => (
             <Carousel.Item key={index}>
               <img className="d-block w-100" src={im} />
