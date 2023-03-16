@@ -1,12 +1,12 @@
 import styles from "../../scss/pages/home.module.scss";
 import hsSales from "../../assets/images/portfolio/hs_sales/1.png";
-import ecrawl from "../../assets/images/portfolio/ecrawl/1.png";
+import ecrawl from "../../assets/images/portfolio/ecrawl/4.png";
 import homesy from "../../assets/images/portfolio/homesy/1.png";
 import inibii from "../../assets/images/portfolio/inibii/1.png";
 import interestMiner from "../../assets/images/portfolio/interest_miner/1.png";
 import tgt from "../../assets/images/portfolio/tgt/1.png";
 import tripYork from "../../assets/images/portfolio/trip_york/1.png";
-import tass from "../../assets/images/portfolio/tass/1.png";
+import tass from "../../assets/images/portfolio/tass/3.png";
 import toredo from "../../assets/images/portfolio/toredo/1.png";
 import { useNavigate } from "react-router-dom";
 import Container from "react-bootstrap/Container";
@@ -157,7 +157,11 @@ export default function PortfolioSection() {
         <PortolioItem url="/project/tass" image={tass} text="Tass" />
         <PortolioItem url="/project/toredo" image={toredo} text="Toredo" />
         <PortolioItem url="/project/homesy" image={homesy} text="Homesy" />
-        <PortolioItem url="/project/ecrawl" image={ecrawl} text="eCrawl" />
+        <PortolioItem
+          url="/project/ecrawl"
+          image={ecrawl}
+          text="Distributed crawler"
+        />
         <PortolioItem
           url="/project/interest_miner"
           image={interestMiner}
