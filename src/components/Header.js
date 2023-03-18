@@ -14,6 +14,7 @@ export default function Header() {
     <Navbar expand="sm" className="bg-primary" fixed="top" variant="dark">
       <Container fluid>
         <ContactModal show={showModal} setShow={setShowModal} />
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Brand
           href="#"
           onClick={(e) => {
@@ -25,8 +26,13 @@ export default function Header() {
           WelkinCode
         </Navbar.Brand>
 
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-
+        <Button
+          variant="secondary"
+          className={`text-white rounded-pill ${styles.headerContactBtn} d-sm-none d-inline-block`}
+          onClick={(e) => setShowModal(true)}
+        >
+          Contact me
+        </Button>
         <Navbar.Collapse
           id="basic-navbar-nav"
           className="justify-content-end align-items-center"
@@ -38,17 +44,15 @@ export default function Header() {
             <Nav.Link href="/#portfolio" className="text-white">
               Portfolio
             </Nav.Link>
-            <Nav.Link className="text-info">
-              <Button
-                variant="secondary"
-                className={`text-white rounded-pill ${styles.headerContactBtn}`}
-                onClick={(e) => setShowModal(true)}
-              >
-                Contact me
-              </Button>
-            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
+        <Button
+          variant="secondary"
+          className={`text-white rounded-pill ${styles.headerContactBtn} d-sm-inline-block d-none`}
+          onClick={(e) => setShowModal(true)}
+        >
+          Contact me
+        </Button>
       </Container>
     </Navbar>
   );
