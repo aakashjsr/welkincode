@@ -15,7 +15,7 @@ import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
 import { useLayoutEffect, useState } from "react";
 
-function PortolioItem({ image, text, url }) {
+function PortolioItem({ image, text, url, desc }) {
   const navigate = useNavigate();
   return (
     <Col
@@ -31,12 +31,10 @@ function PortolioItem({ image, text, url }) {
           className={`${styles.textOverlay} d-flex flex-column justify-content-evenly p-2 rounded-3`}
         >
           <h4>{text}</h4>
-          <p>
-            Homesy is a platform for the German real estate marketplace that
-            allows users to list properties
-          </p>
+          <p>{desc}</p>
         </div>
       </div>
+      <h4 className="mt-2 d-sm-block d-md-none">{text}</h4>
     </Col>
   );
 }
@@ -157,28 +155,72 @@ export default function PortfolioSection() {
       <h1 className="text-center mb-5">Portfolio</h1>
 
       <Row className="p-1">
-        <PortolioItem url="/project/hs_sales" image={hsSales} text="HS Sales" />
-        <PortolioItem url="/project/tgt" image={tgt} text="The Good Trends" />
-        <PortolioItem url="/project/homesy" image={homesy} text="Homesy" />
-        <PortolioItem url="/project/tass" image={tass} text="Tass" />
-        <PortolioItem url="/project/toredo" image={toredo} text="Toredo" />
+        <PortolioItem
+          desc="The HS web application is an inventory
+          management platform that enables the admins to list and sell products on
+          multiple platforms like eBay, Amazon, Rakuten etc"
+          url="/project/hs_sales"
+          image={hsSales}
+          text="HS Sales"
+        />
+        <PortolioItem
+          desc="The Good Trends is a marketplace that connects buyers to sellers and local
+          store owners that sell healthy food"
+          url="/project/tgt"
+          image={tgt}
+          text="The Good Trends"
+        />
+        <PortolioItem
+          desc="Homesy is a platform for the German real estate marketplace that
+          allows users to list properties"
+          url="/project/homesy"
+          image={homesy}
+          text="Homesy"
+        />
+        <PortolioItem
+          desc="TASS is a ticket management platform that integrates with a variety of
+          platforms and provides an integrated view point to check and work upon
+          customer tickets"
+          url="/project/toredo"
+          url="/project/tass"
+          image={tass}
+          text="Tass"
+        />
+        <PortolioItem
+          desc="Toredo is a platform where users can sell their old smartphones based on
+          their conditions and cash out using a simple online workflow."
+          image={toredo}
+          text="Toredo"
+        />
 
         <PortolioItem
+          desc="Tripyork is a travel website that enables users to book flights, cabs, hotels
+          etc. by comparing the prices across different websites"
           url="/project/trip_york"
           image={tripYork}
           text="Trip York"
         />
         <PortolioItem
+          desc="E-crawl is a highly efficient distributed crawler that maintains stock and availability of 40,000+ products"
           url="/project/ecrawl"
           image={ecrawl}
           text="Distributed crawler"
         />
         <PortolioItem
+          desc="Interest Miner is a platform that pulls data from twitter and research papers for an
+          academic scholar and uses ML to analyse the user’s interest and displays
+          the correlation between interests and topics using a variety of charts."
           url="/project/interest_miner"
           image={interestMiner}
           text="Interest miner"
         />
-        <PortolioItem url="/project/inibii" image={inibii} text="Inibii" />
+        <PortolioItem
+          desc="Inibii Technology is changing the way building owners and facility
+      managers visualize, monitor and manage their energy usage"
+          url="/project/inibii"
+          image={inibii}
+          text="Inibii"
+        />
       </Row>
 
       <Row>
