@@ -22,11 +22,21 @@ function PortolioItem({ image, text, url }) {
       xs="12"
       md="6"
       lg="4"
-      className={`mb-5 text-center p-2 p-sm-4 ${styles.portfolioEntry}`}
+      className={`mb-5 text-center  ${styles.portfolioEntry}`}
       onClick={(e) => navigate(url)}
     >
-      <Image fluid src={image} className="rounded-3 mb-4" />
-      <h4>{text}</h4>
+      <div className={styles.container}>
+        <Image fluid src={image} className="rounded-3 mb-4" />
+        <div
+          className={`${styles.textOverlay} d-flex flex-column justify-content-evenly p-2 rounded-3`}
+        >
+          <h4>{text}</h4>
+          <p>
+            Homesy is a platform for the German real estate marketplace that
+            allows users to list properties
+          </p>
+        </div>
+      </div>
     </Col>
   );
 }
@@ -144,19 +154,20 @@ function Testimonials() {
 export default function PortfolioSection() {
   return (
     <Container fluid id="portfolio" className="p-2 p-md-4 bg-info text-dark">
-      <h1 className="text-center">Portfolio</h1>
+      <h1 className="text-center mb-5">Portfolio</h1>
 
       <Row className="p-1">
         <PortolioItem url="/project/hs_sales" image={hsSales} text="HS Sales" />
         <PortolioItem url="/project/tgt" image={tgt} text="The Good Trends" />
+        <PortolioItem url="/project/homesy" image={homesy} text="Homesy" />
+        <PortolioItem url="/project/tass" image={tass} text="Tass" />
+        <PortolioItem url="/project/toredo" image={toredo} text="Toredo" />
+
         <PortolioItem
           url="/project/trip_york"
           image={tripYork}
           text="Trip York"
         />
-        <PortolioItem url="/project/tass" image={tass} text="Tass" />
-        <PortolioItem url="/project/toredo" image={toredo} text="Toredo" />
-        <PortolioItem url="/project/homesy" image={homesy} text="Homesy" />
         <PortolioItem
           url="/project/ecrawl"
           image={ecrawl}
