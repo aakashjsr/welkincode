@@ -1,7 +1,36 @@
 @import "../variables";
+@import "../bs_overrides";
 
 .portfolioEntry {
   cursor: pointer;
+
+  .container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    h4,
+    p {
+      color: $white;
+    }
+  }
+
+  .textOverlay {
+    background-color: $dark;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    opacity: 0;
+    color: white;
+    transition: opacity 500ms;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
 
   h4 {
     letter-spacing: 0.1rem;
