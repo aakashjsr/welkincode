@@ -21,13 +21,20 @@ export default function HeroBanner() {
             <span className="text-secondary">Precise</span> and{" "}
             <span className="text-success">Reliable!</span>
           </h1>
-          <h2 className="text-light mt-5 fs-5">
+          <h2 className="text-light mt-5 fs-5 lh-base">
             Web Development is more than just making things look pretty. It’s
             about telling a story through the visuals that get your ideas across
             to your customers. <br />
             <br />
-            We help you turn ideas into reality. Let’s build something amazing
-            together!
+            I'm a full stack developer and specialise in building web
+            applications using{" "}
+            <span className="fw-bold text-white">Django</span> and{" "}
+            <span className="fw-bold text-white">React</span>. I'll help you
+            turn ideas into reality. <br />
+            <br />
+            <span className="text-white">
+              Let’s build something amazing together!
+            </span>
           </h2>
           <div className="mt-5">
             <Button

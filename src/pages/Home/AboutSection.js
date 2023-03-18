@@ -185,7 +185,7 @@ export default function AboutSection() {
               HEY THERE!
             </h5>
             <h1 className="mb-5 text-primary">I'm Aakash</h1>
-            <p className="fs-5">
+            <p className="fs-5 lh-base">
               I'm a seasoned software engineer specializing in full stack
               development. I have 8 years of experience in architecting and
               developing products for startups and established companies across
@@ -202,11 +202,11 @@ export default function AboutSection() {
           <div className="mt-5">
             <h3 className="">ACHIEVEMENTS</h3>
             <ul>
-              <li>
+              <li className="mb-2">
                 Single-handedly developed a marketplace platform that raised
                 pre-seed funding of $100,000.
               </li>
-              <li>
+              <li className="mb-2">
                 Engineer at Toptal which hires the top 3% developer around the
                 globe
               </li>
