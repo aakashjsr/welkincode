@@ -2,7 +2,7 @@ import Particles from "../../components/Particles";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import bg from "../../assets/images/bg.png";
+import bg from "../../assets/images/freelance-web-development.png";
 import Image from "react-bootstrap/Image";
 import ContactModal from "../ContactModal";
 import { useState } from "react";
@@ -40,7 +40,7 @@ export default function HeroBanner() {
           </div>
         </Col>
         <Col xs="12" md="12" lg="5">
-          <Image src={bg} fluid />
+          <Image src={bg} fluid alt="freelance django and react development" />
         </Col>
       </Row>
     </section>

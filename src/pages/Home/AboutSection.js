@@ -1,5 +1,5 @@
 import styles from "../../scss/pages/home.module.scss";
-import profileImg from "../../assets/images/dp2_black.jpeg";
+import profileImg from "../../assets/images/aakash-kumar-das.jpeg";
 import serviceNow from "../../assets/images/company/servicenow.png";
 import toptal from "../../assets/images/company/toptal.png";
 import codementor from "../../assets/images/company/codementor.jpeg";
@@ -50,11 +50,31 @@ function SocialMediaItem({ icon, url }) {
 }
 
 const socialIconData = [
-  { icon: linkedin, url: "https://www.linkedin.com/in/aakash94/" },
-  { icon: gmail, url: "mailto: aakashjsr@gmail.com" },
-  { icon: codementor, url: "https://www.codementor.io/@aakashkumardas" },
-  { icon: toptal, url: "https://www.toptal.com/resume/aakash-kumar-das" },
-  { icon: fiverr, url: "https://www.fiverr.com/aakashjsr" },
+  {
+    alt: "Linkedin - Aakash Kumar Das",
+    icon: linkedin,
+    url: "https://www.linkedin.com/in/aakash94/",
+  },
+  {
+    alt: "Gmail - Aakash Kumar Das",
+    icon: gmail,
+    url: "mailto: aakashjsr@gmail.com",
+  },
+  {
+    alt: "Codementor - Aakash Kumar Das",
+    icon: codementor,
+    url: "https://www.codementor.io/@aakashkumardas",
+  },
+  {
+    alt: "Toptal - Aakash Kumar Das",
+    icon: toptal,
+    url: "https://www.toptal.com/resume/aakash-kumar-das",
+  },
+  {
+    alt: "Fiverr - Aakash Kumar Das",
+    icon: fiverr,
+    url: "https://www.fiverr.com/aakashjsr",
+  },
 ];
 
 const experienceData = [
@@ -111,14 +131,19 @@ export default function AboutSection() {
       <Row className="mt-5">
         <Col xs="12" md="5" className="text-center">
           {/* Profile image */}
-          <Image src={profileImg} height="250rem" className="rounded-circle" />
+          <Image
+            src={profileImg}
+            height="250rem"
+            className="rounded-circle"
+            alt="Aakash Kumar Das | Full stack developer"
+          />
 
           {/* social links */}
           <Row className="px-2 px-md-5 mt-3">
             <Col>
               {socialIconData.map((item, index) => (
                 <a href={item.url} key={index} className="mx-2">
-                  <Image src={item.icon} height="40" />
+                  <Image src={item.icon} height="40" alt={item.alt} />
                 </a>
               ))}
             </Col>
@@ -133,7 +158,12 @@ export default function AboutSection() {
             {experienceData.map((item, index) => (
               <Row key={index} className="my-4 align-items-center">
                 <Col xs="4" className="text-end">
-                  <Image src={item.icon} height="50" width="50" />
+                  <Image
+                    src={item.icon}
+                    height="50"
+                    width="50"
+                    alt={`Aakash worked at ${item.companyName}`}
+                  />
                 </Col>
                 <Col xs="8" className="text-start">
                   <div>
