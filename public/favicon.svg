@@ -1,0 +1,22 @@
+<svg width="128" height="128" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --fg: #ffffff;
+      --bar: #0f172a;
+      --accent: #2563eb;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1e293b;
+        --fg: #f8fafc;
+        --bar: #1e293b;
+        --accent: #3b82f6;
+      }
+    }
+  </style>
+  <rect width="34" height="34" rx="8" fill="var(--bg)"/>
+  <path d="M17 6L7 24H12L17 14.5L22 24H27L17 6Z" fill="var(--fg)"/>
+  <path d="M13.5 19.5H20.5" stroke="var(--bar)" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="17" cy="11" r="2" fill="var(--accent)"/>
+</svg>
