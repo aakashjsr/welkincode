@@ -50,7 +50,6 @@ function homeTemplate(data, services = []) {
                 <span class="status-indicator" title="Taking on select engagements"></span>
               </div>
               <div class="profile-name">Aakash Das</div>
-              <div class="profile-aka">Also known as Aakash Kumar Das</div>
               <div class="profile-title">Software Architect</div>
               <div class="profile-company">Toptal Top 3% &bull; 10 Years Experience</div>
               <div class="profile-location">
