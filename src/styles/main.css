@@ -1694,3 +1694,76 @@ a:hover {
 .footer-services .footer-links {
   gap: 0.5rem 1.5rem;
 }
+
+/* 1:1 session banner */
+.session-banner {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.75rem 2rem;
+  border: 1px solid var(--color-accent-border);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--color-accent-subtle), var(--bg-card) 70%);
+  box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 800px) {
+  .session-banner {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+}
+
+.session-banner-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-accent);
+  color: #ffffff;
+}
+
+.session-banner-title {
+  font-size: 1.2rem;
+  line-height: 1.3;
+  margin: 0 0 0.35rem;
+}
+
+.session-banner-desc {
+  margin: 0 0 0.6rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.session-banner-proof {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.session-stars {
+  display: inline-flex;
+  gap: 2px;
+  color: #f59e0b;
+}
+
+.session-banner-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.profile-aka {
+  font-size: 0.75rem;
+  color: var(--text-subtle);
+  margin-top: 0.15rem;
+}

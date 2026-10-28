@@ -34,13 +34,17 @@ function layout({
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Aakash Das",
+    "alternateName": ["Aakash Kumar Das", "Aakash K. Das"],
+    "givenName": "Aakash",
+    "familyName": "Das",
     "url": siteUrl,
     "image": `${siteUrl}/assets/images/aakash-kumar-das.jpeg`,
     "jobTitle": "Software Architect",
     "description": "Independent software architect and senior engineer for hire, specializing in Python and Django backends, data pipelines, database performance, and AI integration.",
     "sameAs": [
       "https://www.linkedin.com/in/aakash94/",
-      "https://www.toptal.com/developers/resume/aakash-kumar-das#qz8jnk"
+      "https://www.toptal.com/developers/resume/aakash-kumar-das#qz8jnk",
+      "https://www.codementor.io/@aakashkumardas"
     ],
     "knowsAbout": [
       "Software Architecture",
@@ -72,7 +76,7 @@ function layout({
   <meta name="description" content="${description}" />
   <link rel="canonical" href="${canonicalUrl}" />
   <meta name="robots" content="${noindex ? "noindex, follow" : "index, follow, max-image-preview:large"}" />
-  <meta name="author" content="Aakash Das" />
+  <meta name="author" content="Aakash Kumar Das" />
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#0b0f19" media="(prefers-color-scheme: dark)" />
   <script>
@@ -175,6 +179,7 @@ ${JSON.stringify(finalJsonLd, null, 2)}
         <ul class="footer-links" aria-label="External professional links">
           <li><a href="https://www.linkedin.com/in/aakash94/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           <li><a href="https://www.toptal.com/developers/resume/aakash-kumar-das#qz8jnk" target="_blank" rel="noopener noreferrer">Toptal (Top 3%)</a></li>
+          <li><a href="https://www.codementor.io/@aakashkumardas" target="_blank" rel="noopener noreferrer">Codementor (70 &#9733; reviews)</a></li>
           <li><a href="mailto:aakashjsr@gmail.com">aakashjsr@gmail.com</a></li>
         </ul>
       </div>
@@ -189,7 +194,7 @@ ${JSON.stringify(finalJsonLd, null, 2)}
           : ""
       }
       <div class="footer-bottom">
-        <div>&copy; ${new Date().getFullYear()} Aakash Das. All rights reserved.</div>
+        <div>&copy; ${new Date().getFullYear()} Aakash Kumar Das. All rights reserved.</div>
       </div>
     </div>
   </footer>

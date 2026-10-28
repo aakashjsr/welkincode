@@ -73,6 +73,7 @@ function build() {
       "@context": "https://schema.org",
       "@type": "WebSite",
       name: "Aakash Das",
+      alternateName: "Aakash Kumar Das",
       url: siteUrl,
     },
     {
@@ -95,9 +96,9 @@ function build() {
     },
   ];
   const homeHtml = layout({
-    title: "Aakash Das | Python & Django Software Architect for Hire",
+    title: "Aakash Das (Aakash Kumar Das) | Python & Django Software Architect",
     description:
-      "Independent software architect for hire: Python, Django, React, AWS. Backend architecture, data pipelines, database performance and AI integration. Toptal top 3%.",
+      "Aakash Kumar Das: independent software architect for hire. Python, Django, React, AWS, data pipelines, database tuning and AI integration. Toptal top 3%.",
     canonicalUrl: `${siteUrl}/`,
     siteUrl,
     jsonLd: homeJsonLd,

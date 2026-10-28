@@ -50,6 +50,7 @@ function homeTemplate(data, services = []) {
                 <span class="status-indicator" title="Taking on select engagements"></span>
               </div>
               <div class="profile-name">Aakash Das</div>
+              <div class="profile-aka">Also known as Aakash Kumar Das</div>
               <div class="profile-title">Software Architect</div>
               <div class="profile-company">Toptal Top 3% &bull; 10 Years Experience</div>
               <div class="profile-location">
@@ -99,6 +100,35 @@ function homeTemplate(data, services = []) {
             )
             .join("")}
         </div>
+
+        <aside class="session-banner" aria-label="Book a one-on-one consulting session">
+          <div class="session-banner-icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="5" width="14" height="14" rx="2"></rect>
+              <path d="m16 10 6-3.5v11L16 14"></path>
+            </svg>
+          </div>
+          <div class="session-banner-text">
+            <h3 class="session-banner-title">Need quick expert help? Book a 1:1 session</h3>
+            <p class="session-banner-desc">
+              Code reviews, architecture questions, debugging, or a second opinion, by video call on Codementor.
+            </p>
+            <div class="session-banner-proof">
+              <span class="session-stars" role="img" aria-label="5 out of 5 stars">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 .6-5.3 4.7 1.6 7.2L12 17.8 5.7 21.5l1.6-7.2L2 9.6 9 9z"/></svg>
+              </span>
+              ${profile.codementorReviews} five-star reviews on Codementor
+            </div>
+          </div>
+          <a href="${profile.codementorUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary session-banner-cta">
+            Book a session
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
+        </aside>
       </div>
     </section>
 
@@ -421,6 +451,19 @@ function homeTemplate(data, services = []) {
                 <div class="contact-method-text">
                   <span class="contact-method-label">Toptal</span>
                   <a href="${profile.toptalUrl}" target="_blank" rel="noopener noreferrer" class="contact-method-val">Verified top 3% profile</a>
+                </div>
+              </div>
+
+              <div class="contact-method">
+                <div class="contact-method-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="5" width="14" height="14" rx="2"></rect>
+                    <path d="m16 10 6-3.5v11L16 14"></path>
+                  </svg>
+                </div>
+                <div class="contact-method-text">
+                  <span class="contact-method-label">1:1 Sessions</span>
+                  <a href="${profile.codementorUrl}" target="_blank" rel="noopener noreferrer" class="contact-method-val">Codementor &middot; ${profile.codementorReviews} five-star reviews <span class="session-stars" aria-hidden="true">&#9733;</span></a>
                 </div>
               </div>
 
