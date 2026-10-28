@@ -88,6 +88,19 @@ function homeTemplate(data) {
             .map(
               (project) => `
             <article class="case-card">
+              <div class="case-card-img-wrap">
+                <a href="/project/${project.slug}/" style="display:block;width:100%;height:100%;" tabindex="-1" aria-hidden="true">
+                  <img
+                    src="${project.heroImage}"
+                    alt="Platform screenshot of ${project.title}"
+                    class="case-card-img"
+                    width="600"
+                    height="350"
+                    loading="lazy"
+                  />
+                </a>
+              </div>
+
               <div class="case-card-body">
                 <div>
                   <div class="case-meta">
@@ -99,6 +112,7 @@ function homeTemplate(data) {
                   </h3>
                   <div class="case-subtitle">${project.subtitle}</div>
 
+                  <div class="case-sections">
                   <div class="case-section-item">
                     <div class="case-label">Problem &amp; Context</div>
                     <p style="font-size:0.9375rem;">${project.problem}</p>
@@ -107,6 +121,7 @@ function homeTemplate(data) {
                   <div class="case-section-item">
                     <div class="case-label">My Role &amp; Approach</div>
                     <p style="font-size:0.9375rem;">${project.approach}</p>
+                  </div>
                   </div>
 
                   ${
@@ -131,18 +146,6 @@ function homeTemplate(data) {
                 </div>
               </div>
 
-              <div class="case-card-img-wrap">
-                <a href="/project/${project.slug}/" style="display:block;width:100%;height:100%;" tabindex="-1" aria-hidden="true">
-                  <img
-                    src="${project.heroImage}"
-                    alt="Platform screenshot of ${project.title}"
-                    class="case-card-img"
-                    width="600"
-                    height="350"
-                    loading="lazy"
-                  />
-                </a>
-              </div>
             </article>
           `
             )
