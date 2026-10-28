@@ -22,7 +22,7 @@ const portfolioData = {
     hero: {
       headline: "Senior architect for startups that need reliable systems, shipped fast.",
       subheadline:
-        "Staff Engineer at ServiceNow and Toptal top 3% consultant. I help founders and CTOs ship scalable platforms, fix slow data systems, and make sound architecture decisions.",
+        "Independent software architect and Toptal top 3% engineer. I help founders and CTOs ship Python and Django platforms, build data pipelines, fix slow databases, and make sound architecture decisions.",
       quote: {
         text: "He was super responsive with issues, and extremely productive throughout my work with him. Communication is excellent.",
         author: "Philip Reynolds",
@@ -33,8 +33,8 @@ const portfolioData = {
     },
     about: {
       paragraphs: [
-        "I am a Software Architect and Staff Engineer with close to a decade of hands-on experience building, scaling, and maintaining software that drives real business value. In my current role at ServiceNow, I work on platform architecture, cross-functional alignment across product, design, QA, and technical documentation teams, customer escalations, and team mentoring.",
-        "Alongside my enterprise work, I advise and build as an independent consultant and principal engineer through Toptal (top 3% global talent network) and direct client partnerships. Over my career, I have contributed to more than 20 production products across SaaS, eCommerce, real estate, healthcare, and fintech.",
+        "I am a Software Architect and Staff Engineer with close to a decade of hands-on experience building, scaling, and maintaining software that drives real business value. My day-to-day work is enterprise platform engineering: architecture, cross-functional delivery with product, design and QA, and mentoring other engineers.",
+        "Separately, I take on a small number of independent engagements through Toptal (top 3% global talent network) and direct client partnerships. Over my career, I have contributed to more than 20 production products across SaaS, eCommerce, real estate, healthcare, and fintech.",
         "My approach is grounded in pragmatic architecture: choosing the simplest reliable technology, designing clean schema boundaries, prioritizing performance, and communicating transparently. Clients work with me not just for code delivery, but for technical judgment, business alignment, and clear execution.",
       ],
     },
@@ -42,7 +42,7 @@ const portfolioData = {
 
   // Key trust badges displayed in the hero section
   trustBadges: [
-    { label: "Staff Engineer", detail: "ServiceNow" },
+    { label: "10 Years Engineering", detail: "Production systems since 2015" },
     { label: "Top 3% Talent", detail: "Vetted by Toptal" },
     { label: "20+ Products Shipped", detail: "SaaS, eCommerce, Fintech, Real Estate" },
     { label: "Trusted by Leaders", detail: "Engineering leads at Google & Workday" },
@@ -722,11 +722,11 @@ const portfolioData = {
     },
     {
       category: "Frontend & Performance",
-      items: ["React", "JavaScript (ESNext)", "TypeScript", "Semantic HTML5", "Modern CSS / Sass", "Core Web Vitals Optimization"],
+      items: ["React", "JavaScript (ESNext)", "Semantic HTML5", "Modern CSS / Sass", "Core Web Vitals Optimization"],
     },
     {
       category: "Databases & Storage",
-      items: ["PostgreSQL", "MySQL", "Redis", "Database Indexing & Query Tuning", "Data Lake Modeling"],
+      items: ["PostgreSQL", "MySQL", "Redis", "Firestore", "NoSQL", "Database Indexing & Query Tuning", "Data Lake Modeling"],
     },
     {
       category: "Cloud, DevOps & Tooling",
@@ -734,7 +734,7 @@ const portfolioData = {
     },
     {
       category: "AI & LLM Engineering",
-      items: ["OpenAI API", "Google Gemini API", "Prompt Optimization", "Context Management & Token Tracking", "OCR Pipelines"],
+      items: ["LLM APIs (OpenAI / Gemini / Anthropic)", "Google Gemini API", "Prompt Tuning", "Context Management & Token Tracking", "OCR Pipelines"],
     },
   ],
 };

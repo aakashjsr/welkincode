@@ -11,6 +11,28 @@ const layout = require("./src/templates/layout");
 const homeTemplate = require("./src/templates/home");
 const caseStudyTemplate = require("./src/templates/caseStudy");
 const notFoundTemplate = require("./src/templates/notFound");
+const serviceTemplate = require("./src/templates/service");
+const services = require("./src/data/services");
+
+// Trim text to a search-snippet length at a word boundary
+function trimDescription(text, max = 158) {
+  const clean = text.replace(/\s+/g, " ").trim();
+  if (clean.length <= max) return clean;
+  return clean.slice(0, max - 1).replace(/\s+\S*$/, "") + "…";
+}
+
+function breadcrumbJsonLd(siteUrl, crumbs) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: crumbs.map((c, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: c.name,
+      item: `${siteUrl}${c.path}`,
+    })),
+  };
+}
 
 const DIST_DIR = path.join(__dirname, "dist");
 
@@ -45,12 +67,42 @@ function build() {
 
   // 2. Generate Homepage
   console.log("📄 Generating Homepage (dist/index.html)...");
+  const siteUrl = portfolioData.profile.siteUrl;
+  const homeJsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "Aakash Das",
+      url: siteUrl,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      name: "Aakash Das — Independent Software Architect",
+      url: siteUrl,
+      image: `${siteUrl}/assets/images/aakash-kumar-das.jpeg`,
+      areaServed: "Worldwide",
+      email: portfolioData.profile.email,
+      founder: { "@type": "Person", name: "Aakash Das" },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Services",
+        itemListElement: services.map((s) => ({
+          "@type": "Offer",
+          itemOffered: { "@type": "Service", name: s.name, url: `${siteUrl}/services/${s.slug}/` },
+        })),
+      },
+    },
+  ];
   const homeHtml = layout({
-    title: `${portfolioData.profile.name} — Software Architect`,
-    description: `${portfolioData.profile.name} is a Software Architect and Staff Engineer at ServiceNow with close to a decade of experience designing scalable backend architectures and pragmatic full-stack systems.`,
-    canonicalUrl: `${portfolioData.profile.siteUrl}/`,
-    siteUrl: portfolioData.profile.siteUrl,
-    content: homeTemplate(portfolioData),
+    title: "Aakash Das | Python & Django Software Architect for Hire",
+    description:
+      "Independent software architect for hire: Python, Django, React, AWS. Backend architecture, data pipelines, database performance and AI integration. Toptal top 3%.",
+    canonicalUrl: `${siteUrl}/`,
+    siteUrl,
+    jsonLd: homeJsonLd,
+    services,
+    content: homeTemplate(portfolioData, services),
     currentPath: "/",
   });
   fs.writeFileSync(path.join(DIST_DIR, "index.html"), homeHtml, "utf8");
@@ -75,19 +127,70 @@ function build() {
     };
 
     const caseStudyHtml = layout({
-      title: `${project.title} — Architecture Case Study | ${portfolioData.profile.name}`,
-      description: `${project.subtitle}. Problem: ${project.problem} Stack: ${project.stack.join(", ")}.`,
+      title: `${project.title}: ${project.subtitle} | Case Study`,
+      description: trimDescription(`${project.subtitle}. ${project.verifiedResults[0]} Built with ${project.stack.slice(0, 4).join(", ")}.`),
+      services,
       canonicalUrl: `${portfolioData.profile.siteUrl}/project/${project.slug}/`,
       siteUrl: portfolioData.profile.siteUrl,
       ogImage: `${portfolioData.profile.siteUrl}${project.heroImage}`,
       ogType: "article",
-      jsonLd: caseStudyJsonLd,
+      jsonLd: [
+        caseStudyJsonLd,
+        breadcrumbJsonLd(portfolioData.profile.siteUrl, [
+          { name: "Home", path: "/" },
+          { name: "Case Studies", path: "/#work" },
+          { name: project.title, path: `/project/${project.slug}/` },
+        ]),
+      ],
       content: caseStudyTemplate(project, portfolioData.caseStudies),
       currentPath: `/project/${project.slug}/`,
     });
 
     fs.writeFileSync(path.join(projectDir, "index.html"), caseStudyHtml, "utf8");
     console.log(`   ✓ /project/${project.slug}/`);
+  });
+
+  // 3b. Generate Service Landing Pages
+  console.log("📄 Generating Service pages...");
+  services.forEach((service) => {
+    const dir = path.join(DIST_DIR, "services", service.slug);
+    fs.mkdirSync(dir, { recursive: true });
+    const url = `${siteUrl}/services/${service.slug}/`;
+    const html = layout({
+      title: service.title,
+      description: service.description,
+      canonicalUrl: url,
+      siteUrl,
+      services,
+      jsonLd: [
+        {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: service.name,
+          description: service.description,
+          url,
+          areaServed: "Worldwide",
+          provider: { "@type": "Person", name: portfolioData.profile.name, url: siteUrl },
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: service.faqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        },
+        breadcrumbJsonLd(siteUrl, [
+          { name: "Home", path: "/" },
+          { name: service.name, path: `/services/${service.slug}/` },
+        ]),
+      ],
+      content: serviceTemplate(service, services, portfolioData.caseStudies, portfolioData.profile),
+      currentPath: `/services/${service.slug}/`,
+    });
+    fs.writeFileSync(path.join(dir, "index.html"), html, "utf8");
+    console.log(`   ✓ /services/${service.slug}/`);
   });
 
   // Legacy route compatibility: /project/source_box -> /project/sourcebox
@@ -100,6 +203,8 @@ function build() {
       description: `${sourceboxProject.subtitle}. Problem: ${sourceboxProject.problem}`,
       canonicalUrl: `${portfolioData.profile.siteUrl}/project/sourcebox/`,
       siteUrl: portfolioData.profile.siteUrl,
+      noindex: true,
+      services,
       content: caseStudyTemplate(sourceboxProject, portfolioData.caseStudies),
       currentPath: `/project/sourcebox/`,
     });
@@ -113,6 +218,8 @@ function build() {
     description: "The page you are looking for does not exist.",
     canonicalUrl: `${portfolioData.profile.siteUrl}/404.html`,
     siteUrl: portfolioData.profile.siteUrl,
+    noindex: true,
+    services,
     content: notFoundTemplate(),
     currentPath: "/404.html",
   });
@@ -123,6 +230,10 @@ function build() {
   const currentDate = new Date().toISOString().split("T")[0];
   const sitemapUrls = [
     `  <url>\n    <loc>${portfolioData.profile.siteUrl}/</loc>\n    <lastmod>${currentDate}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>\n  </url>`,
+    ...services.map(
+      (s) =>
+        `  <url>\n    <loc>${portfolioData.profile.siteUrl}/services/${s.slug}/</loc>\n    <lastmod>${currentDate}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.9</priority>\n  </url>`
+    ),
     ...portfolioData.caseStudies.map(
       (p) =>
         `  <url>\n    <loc>${portfolioData.profile.siteUrl}/project/${p.slug}/</loc>\n    <lastmod>${currentDate}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>`

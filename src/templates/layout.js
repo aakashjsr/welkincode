@@ -23,8 +23,10 @@ function layout({
   ogImage = null,
   ogType = "website",
   jsonLd = null,
+  noindex = false,
   content,
   currentPath = "/",
+  services = [],
 }) {
   const finalOgImage = ogImage || `${siteUrl}/assets/images/aakash-kumar-das.jpeg`;
 
@@ -35,19 +37,19 @@ function layout({
     "url": siteUrl,
     "image": `${siteUrl}/assets/images/aakash-kumar-das.jpeg`,
     "jobTitle": "Software Architect",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "ServiceNow"
-    },
-    "description": "Software architect and senior engineer specializing in scalable backend systems, data pipelines, and pragmatic architecture.",
+    "description": "Independent software architect and senior engineer for hire, specializing in Python and Django backends, data pipelines, database performance, and AI integration.",
     "sameAs": [
       "https://www.linkedin.com/in/aakash94/",
       "https://www.toptal.com/developers/resume/aakash-kumar-das#qz8jnk"
     ],
     "knowsAbout": [
       "Software Architecture",
+      "Backend Architecture",
       "Python",
       "Django",
+      "Web Scraping",
+      "Data Pipelines",
+      "LLM Integration",
       "React",
       "PostgreSQL",
       "Distributed Crawlers",
@@ -58,7 +60,8 @@ function layout({
     ]
   };
 
-  const finalJsonLd = jsonLd ? [profileJsonLd, jsonLd] : [profileJsonLd];
+  const extraJsonLd = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
+  const finalJsonLd = [profileJsonLd, ...extraJsonLd];
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -68,6 +71,8 @@ function layout({
   <title>${title}</title>
   <meta name="description" content="${description}" />
   <link rel="canonical" href="${canonicalUrl}" />
+  <meta name="robots" content="${noindex ? "noindex, follow" : "index, follow, max-image-preview:large"}" />
+  <meta name="author" content="Aakash Das" />
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#0b0f19" media="(prefers-color-scheme: dark)" />
   <script>
@@ -173,9 +178,18 @@ ${JSON.stringify(finalJsonLd, null, 2)}
           <li><a href="mailto:aakashjsr@gmail.com">aakashjsr@gmail.com</a></li>
         </ul>
       </div>
+      ${
+        services.length
+          ? `<div class="footer-services">
+        <span class="footer-services-label">Services</span>
+        <ul class="footer-links" aria-label="Services">
+          ${services.map((s) => `<li><a href="/services/${s.slug}/">${s.name}</a></li>`).join("")}
+        </ul>
+      </div>`
+          : ""
+      }
       <div class="footer-bottom">
         <div>&copy; ${new Date().getFullYear()} Aakash Das. All rights reserved.</div>
-        <div style="color: var(--text-subtle);">Static architecture &bull; Hosted on Cloudflare Pages</div>
       </div>
     </div>
   </footer>

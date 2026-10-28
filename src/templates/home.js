@@ -2,7 +2,7 @@
  * Homepage Template
  */
 
-function homeTemplate(data) {
+function homeTemplate(data, services = []) {
   const mailto = `mailto:${data.profile.email}?subject=${encodeURIComponent("Project inquiry")}`;
   const { profile, trustBadges, proofPoints, methodology, caseStudies, experience, testimonials, skills } = data;
 
@@ -17,7 +17,7 @@ function homeTemplate(data) {
           <div class="hero-content">
             <div class="hero-badge">
               <span class="status-dot" style="display:inline-block;width:8px;height:8px;background:#059669;border-radius:50%;"></span>
-              Staff Software Engineer &bull; Systems Architect
+              Software Architect &bull; Independent Consultant
             </div>
             <h1 class="hero-headline">${profile.hero.headline}</h1>
             <p class="hero-subheadline">${profile.hero.subheadline}</p>
@@ -47,17 +47,17 @@ function homeTemplate(data) {
                   height="160"
                   fetchpriority="high"
                 />
-                <span class="status-indicator" title="Available for select consulting"></span>
+                <span class="status-indicator" title="Taking on select engagements"></span>
               </div>
               <div class="profile-name">Aakash Das</div>
               <div class="profile-title">Software Architect</div>
-              <div class="profile-company">ServiceNow &bull; Toptal Top 3%</div>
+              <div class="profile-company">Toptal Top 3% &bull; 10 Years Experience</div>
               <div class="profile-location">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                   <circle cx="12" cy="10" r="3"></circle>
                 </svg>
-                Available for Remote Client Work
+                Selective Remote Engagements
               </div>
             </div>
 
@@ -74,6 +74,28 @@ function homeTemplate(data) {
               <span class="trust-item-detail">${badge.detail}</span>
             </div>
           `
+            )
+            .join("")}
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section section-alt" id="services">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Services</div>
+          <h2 class="section-title">How I can help</h2>
+        </div>
+        <div class="service-grid">
+          ${services
+            .map(
+              (s) => `
+            <a href="/services/${s.slug}/" class="service-card">
+              <span class="service-card-title">${s.name}</span>
+              <span class="service-card-desc">${s.summary}</span>
+              <span class="service-card-link">Learn more &rarr;</span>
+            </a>`
             )
             .join("")}
         </div>
@@ -278,7 +300,7 @@ function homeTemplate(data) {
           <div class="section-eyebrow">Career &amp; Practice</div>
           <h2 class="section-title">Experience</h2>
           <p class="section-desc">
-            Enterprise engineering rigor at ServiceNow, combined with independent startup consulting speed.
+            A decade of enterprise engineering and startup delivery.
           </p>
         </div>
 
@@ -425,6 +447,9 @@ function homeTemplate(data) {
             <a href="${mailto}" class="btn btn-primary" style="width: 100%; padding: 0.85rem;">
               Email ${profile.email}
             </a>
+            <p style="font-size: 0.8125rem; color: var(--text-subtle); margin-top: 1rem;">
+              Independent engagements are separate from my employment and never involve my employer&rsquo;s products, customers, or confidential information.
+            </p>
           </div>
         </div>
       </div>
