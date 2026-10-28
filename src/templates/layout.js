@@ -139,11 +139,11 @@ ${JSON.stringify(finalJsonLd, null, 2)}
         </div>
 
       <nav id="primary-nav" class="nav-menu" role="navigation" aria-label="Primary navigation">
-        <a href="/#work" class="nav-link">Case Studies</a>
-        <a href="/#how-i-work" class="nav-link">How I Work</a>
-        <a href="/#impact" class="nav-link">Impact</a>
+        <a href="/#work" class="nav-link">Work</a>
+        <a href="/#testimonials" class="nav-link">Reviews</a>
+        <a href="/#how-i-work" class="nav-link">Process</a>
         <a href="/#experience" class="nav-link">Experience</a>
-        <a href="/#about" class="nav-link">About</a>
+        <a href="/#contact" class="nav-link">Contact</a>
         <div class="nav-cta">
           <a href="mailto:aakashjsr@gmail.com?subject=Project%20inquiry" class="btn btn-primary btn-sm">Discuss a project</a>
         </div>

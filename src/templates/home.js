@@ -26,6 +26,14 @@ function homeTemplate(data) {
               <a href="${mailto}" class="btn btn-primary">${profile.hero.primaryCta}</a>
               <a href="#work" class="btn btn-secondary">${profile.hero.secondaryCta}</a>
             </div>
+
+            <figure class="hero-quote">
+              <blockquote>&ldquo;${profile.hero.quote.text}&rdquo;</blockquote>
+              <figcaption>
+                <strong>${profile.hero.quote.author}</strong>, ${profile.hero.quote.title}
+                <a href="#testimonials">Read more reviews &rarr;</a>
+              </figcaption>
+            </figure>
           </div>
 
           <aside class="hero-aside">
@@ -79,7 +87,7 @@ function homeTemplate(data) {
           <div class="section-eyebrow">Proven Results</div>
           <h2 class="section-title">Selected Case Studies</h2>
           <p class="section-desc">
-            Deep-dive examples of client consulting partnerships where business problems were solved with pragmatic architecture, resilient data pipelines, and clean execution.
+            Business problems solved with pragmatic architecture, resilient data pipelines, and clean execution.
           </p>
         </div>
 
@@ -153,11 +161,11 @@ function homeTemplate(data) {
         </div>
 
         <!-- Additional Projects Archive Grid -->
-        <div style="margin-top: 4.5rem;">
-          <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;">Other Production Systems</h3>
-          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
-            Additional systems, portals, and data architectures built across real estate, developer tooling, academic NLP, and recommerce.
-          </p>
+        <details class="archive-details">
+          <summary class="btn btn-secondary">
+            <span class="archive-closed">Show ${archiveProjects.length} more projects</span>
+            <span class="archive-open">Hide additional projects</span>
+          </summary>
           <div class="projects-archive-grid">
             ${archiveProjects
               .map(
@@ -186,18 +194,64 @@ function homeTemplate(data) {
               )
               .join("")}
           </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Client Testimonials -->
+    <section class="section section-alt" id="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Client Feedback</div>
+          <h2 class="section-title">What clients say</h2>
+          <p class="section-desc">
+            From engineering leaders and founders I have worked with directly.
+          </p>
         </div>
+
+        <div class="testimonials-grid${testimonials.length > 6 ? " is-collapsed" : ""}" id="testimonials-grid">
+          ${testimonials
+            .map(
+              (item, i) => `
+            <figure class="testimonial-card${i < 2 ? " is-featured" : ""}${i >= 6 ? " is-extra" : ""}">
+              <svg class="testimonial-mark" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M9.4 5C5.9 6.4 3.5 9.5 3.5 13.4V19h6.2v-6.2H6.6c0-2.4 1.1-4 3.1-5zm9 0c-3.5 1.4-5.9 4.5-5.9 8.4V19h6.2v-6.2h-3.1c0-2.4 1.1-4 3.1-5z"/>
+              </svg>
+              <blockquote class="testimonial-quote">${item.quote}</blockquote>
+              <figcaption class="testimonial-author-row">
+                <div class="author-avatar">${item.avatarInitials}</div>
+                <div class="author-meta">
+                  <span class="author-name">${item.author}</span>
+                  <span class="author-title">${item.title}</span>
+                  <span class="author-company">${item.company}</span>
+                </div>
+              </figcaption>
+            </figure>
+          `
+            )
+            .join("")}
+        </div>
+        ${
+          testimonials.length > 6
+            ? `<noscript><style>.testimonials-grid .is-extra{display:flex !important}.js-toggle-testimonials{display:none}</style></noscript>
+        <div style="text-align:center;margin-top:2rem;">
+          <button type="button" class="btn btn-secondary js-toggle-testimonials" aria-expanded="false" aria-controls="testimonials-grid">
+            Show ${testimonials.length - 6} more reviews
+          </button>
+        </div>`
+            : ""
+        }
       </div>
     </section>
 
     <!-- How I Work -->
-    <section class="section section-alt" id="how-i-work">
+    <section class="section" id="how-i-work">
       <div class="container">
         <div class="section-header">
           <div class="section-eyebrow">Engagement Process</div>
           <h2 class="section-title">How I Work With Clients</h2>
           <p class="section-desc">
-            Senior engineering consulting is not just about writing code—it is about reducing uncertainty, choosing sustainable architectures, and ensuring your internal team can operate smoothly long after delivery.
+            Reduce uncertainty, choose sustainable architecture, and leave your team able to run it.
           </p>
         </div>
 
@@ -208,36 +262,7 @@ function homeTemplate(data) {
             <div class="methodology-card">
               <div class="methodology-step">${step.step}</div>
               <h3 class="methodology-title">${step.title}</h3>
-              <p class="methodology-desc">${step.description}</p>
-            </div>
-          `
-            )
-            .join("")}
-        </div>
-      </div>
-    </section>
-
-    <!-- Architectural Proof Points & Selected Metrics -->
-    <section class="section" id="impact">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-eyebrow">By the Numbers</div>
-          <h2 class="section-title">Measured Impact</h2>
-          <p class="section-desc">
-            Achievements and metrics across venture delivery, distributed data systems, query tuning, and pragmatic AI implementations.
-          </p>
-        </div>
-
-        <div class="proof-grid">
-          ${proofPoints
-            .map(
-              (pt) => `
-            <div class="proof-card">
-              <div class="proof-category">${pt.category}</div>
-              <div class="proof-metric">${pt.metric}</div>
-              <h3 class="proof-title">${pt.title}</h3>
-              <p class="proof-desc">${pt.description}</p>
-              ${pt.note ? `<div class="proof-note">${pt.note}</div>` : ""}
+              <p class="methodology-desc">${step.description.split(". ")[0].replace(/\.$/, "")}.</p>
             </div>
           `
             )
@@ -251,9 +276,9 @@ function homeTemplate(data) {
       <div class="container">
         <div class="section-header">
           <div class="section-eyebrow">Career &amp; Practice</div>
-          <h2 class="section-title">Experience &amp; Track Record</h2>
+          <h2 class="section-title">Experience</h2>
           <p class="section-desc">
-            A career combining enterprise engineering rigor at ServiceNow with independent startup consulting speed.
+            Enterprise engineering rigor at ServiceNow, combined with independent startup consulting speed.
           </p>
         </div>
 
@@ -289,20 +314,8 @@ function homeTemplate(data) {
             )
             .join("")}
         </div>
-      </div>
-    </section>
 
-    <!-- Pragmatic Technology & Stack -->
-    <section class="section" id="skills">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-eyebrow">Technical Capabilities</div>
-          <h2 class="section-title">Pragmatic Technology Stack</h2>
-          <p class="section-desc">
-            I select battle-tested, maintainable tools directly aligned with system reliability, developer velocity, and long-term maintainability.
-          </p>
-        </div>
-
+        <h3 style="font-size:1.25rem;margin:3rem 0 1.25rem;">Core stack</h3>
         <div class="skills-grid">
           ${skills
             .map(
@@ -316,84 +329,6 @@ function homeTemplate(data) {
           `
             )
             .join("")}
-        </div>
-      </div>
-    </section>
-
-    <!-- Client Testimonials -->
-    <section class="section section-alt" id="testimonials">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-eyebrow">Client Feedback</div>
-          <h2 class="section-title">Endorsements from Founders &amp; Leaders</h2>
-          <p class="section-desc">
-            Direct feedback from CEOs, founders, and research partners who have worked with me on production systems.
-          </p>
-        </div>
-
-        <div class="testimonials-grid${testimonials.length > 6 ? " is-collapsed" : ""}" id="testimonials-grid">
-          ${testimonials
-            .map(
-              (item, i) => `
-            <div class="testimonial-card${i >= 6 ? " is-extra" : ""}">
-              <p class="testimonial-quote">&ldquo;${item.quote}&rdquo;</p>
-              <div class="testimonial-author-row">
-                <div class="author-avatar">${item.avatarInitials}</div>
-                <div class="author-meta">
-                  <span class="author-name">${item.author}</span>
-                  <span class="author-title">${item.title}, ${item.company}</span>
-                </div>
-              </div>
-            </div>
-          `
-            )
-            .join("")}
-        </div>
-        ${
-          testimonials.length > 6
-            ? `<noscript><style>.testimonials-grid .is-extra{display:flex !important}.js-toggle-testimonials{display:none}</style></noscript>
-        <div style="text-align:center;margin-top:2rem;">
-          <button type="button" class="btn btn-secondary js-toggle-testimonials" aria-expanded="false" aria-controls="testimonials-grid">
-            Show ${testimonials.length - 6} more reviews
-          </button>
-        </div>`
-            : ""
-        }
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="section" id="about">
-      <div class="container" style="max-width: 860px;">
-        <div class="section-header">
-          <div class="section-eyebrow">Background</div>
-          <h2 class="section-title">About Me</h2>
-        </div>
-
-        <div style="font-size: 1.05rem; line-height: 1.75; color: var(--text-muted);">
-          ${profile.about.paragraphs.map((p) => `<p>${p}</p>`).join("")}
-        </div>
-
-        <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-          <a href="${profile.linkedinUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.65 1.65 0 1 0 0-3.3 1.65 1.65 0 0 0 0 3.3m1.4 9.74V9.92H5.06v8.58h2.8Z"/>
-            </svg>
-            Connect on LinkedIn
-          </a>
-          <a href="${profile.toptalUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-            Verified Toptal Profile
-          </a>
-          ${
-            profile.upworkUrl
-              ? `<a href="${profile.upworkUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-            Upwork &middot; ${profile.upworkReviews} reviews
-          </a>`
-              : ""
-          }
-          <a href="${mailto}" class="btn btn-primary">
-            Discuss a Project
-          </a>
         </div>
       </div>
     </section>
@@ -454,6 +389,18 @@ function homeTemplate(data) {
               </div>`
                   : ""
               }
+
+              <div class="contact-method">
+                <div class="contact-method-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2l3 7h7l-5.5 4.5L18.5 21 12 16.5 5.5 21 7.5 13.5 2 9h7z"></path>
+                  </svg>
+                </div>
+                <div class="contact-method-text">
+                  <span class="contact-method-label">Toptal</span>
+                  <a href="${profile.toptalUrl}" target="_blank" rel="noopener noreferrer" class="contact-method-val">Verified top 3% profile</a>
+                </div>
+              </div>
 
               <div class="contact-method">
                 <div class="contact-method-icon">

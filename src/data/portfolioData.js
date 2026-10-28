@@ -20,9 +20,14 @@ const portfolioData = {
     upworkUrl: "", // TODO: add Upwork profile URL
     upworkReviews: 2,
     hero: {
-      headline: "Pragmatic software architecture and engineering for critical business problems.",
+      headline: "Senior architect for startups that need reliable systems, shipped fast.",
       subheadline:
-        "Staff Software Engineer at ServiceNow with close to a decade of production experience. I help founders, CTOs, and product teams cut through architectural complexity, optimize core data systems, and ship fast, reliable applications.",
+        "Staff Engineer at ServiceNow and Toptal top 3% consultant. I help founders and CTOs ship scalable platforms, fix slow data systems, and make sound architecture decisions.",
+      quote: {
+        text: "He was super responsive with issues, and extremely productive throughout my work with him. Communication is excellent.",
+        author: "Philip Reynolds",
+        title: "VP Engineering, Workday",
+      },
       primaryCta: "Discuss a project",
       secondaryCta: "View case studies",
     },
@@ -37,11 +42,12 @@ const portfolioData = {
 
   // Key trust badges displayed in the hero section
   trustBadges: [
-    { label: "Staff Software Engineer", detail: "ServiceNow" },
+    { label: "Staff Engineer", detail: "ServiceNow" },
     { label: "Top 3% Talent", detail: "Vetted by Toptal" },
-    { label: "20+ Shipped Products", detail: "SaaS, eCommerce, Fintech, Real Estate" },
-    { label: "Venture Delivery", detail: "Core Platform for $100K Seed-Funded Startup" },
+    { label: "20+ Products Shipped", detail: "SaaS, eCommerce, Fintech, Real Estate" },
+    { label: "Trusted by Leaders", detail: "Engineering leads at Google & Workday" },
   ],
+
 
   // Architectural capabilities and candidate proof points
   proofPoints: [
@@ -572,7 +578,7 @@ const portfolioData = {
     },
     {
       company: "Toptal & Private Consulting",
-      role: "Principal Engineer & Systems Architect",
+      role: "Full stack engineer & Consultant",
       tenure: "2018 – Present",
       type: "Independent Client Consulting",
       logo: "/assets/images/company/toptal.png",
