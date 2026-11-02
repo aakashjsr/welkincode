@@ -13,6 +13,8 @@ const caseStudyTemplate = require("./src/templates/caseStudy");
 const notFoundTemplate = require("./src/templates/notFound");
 const serviceTemplate = require("./src/templates/service");
 const services = require("./src/data/services");
+const { loadPosts } = require("./src/blog/posts");
+const { blogIndexTemplate, blogPostTemplate, esc } = require("./src/templates/blog");
 
 // Trim text to a search-snippet length at a word boundary
 function trimDescription(text, max = 158) {
@@ -194,6 +196,104 @@ function build() {
     console.log(`   ✓ /services/${service.slug}/`);
   });
 
+  // 3c. Generate Blog (index, posts, RSS)
+  const posts = loadPosts();
+  if (posts.length) {
+    console.log("📝 Generating Blog pages...");
+    const blogDir = path.join(DIST_DIR, "blog");
+    fs.mkdirSync(blogDir, { recursive: true });
+
+    fs.writeFileSync(
+      path.join(blogDir, "index.html"),
+      layout({
+        title: "Blog | Aakash Das",
+        description: "Notes on Python, Django, data pipelines and software architecture by Aakash Das.",
+        canonicalUrl: `${siteUrl}/blog/`,
+        siteUrl,
+        services,
+        jsonLd: [
+          { "@context": "https://schema.org", "@type": "Blog", name: "Aakash Das — Blog", url: `${siteUrl}/blog/` },
+          breadcrumbJsonLd(siteUrl, [
+            { name: "Home", path: "/" },
+            { name: "Blog", path: "/blog/" },
+          ]),
+        ],
+        content: blogIndexTemplate(posts),
+        currentPath: "/blog/",
+      }),
+      "utf8"
+    );
+    console.log("   ✓ /blog/");
+
+    posts.forEach((post) => {
+      const dir = path.join(blogDir, post.slug);
+      fs.mkdirSync(dir, { recursive: true });
+      const url = `${siteUrl}/blog/${post.slug}/`;
+      fs.writeFileSync(
+        path.join(dir, "index.html"),
+        layout({
+          title: esc(`${post.title} | Aakash Das`),
+          description: esc(trimDescription(post.description)),
+          canonicalUrl: url,
+          siteUrl,
+          ogType: "article",
+          ogImage: post.image ? `${siteUrl}${post.image}` : null,
+          noindex: post.draft,
+          services,
+          jsonLd: [
+            {
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              headline: post.title,
+              description: post.description,
+              datePublished: post.dateIso,
+              dateModified: post.dateIso,
+              mainEntityOfPage: url,
+              keywords: post.tags.join(", "),
+              ...(post.image ? { image: `${siteUrl}${post.image}` } : {}),
+              author: { "@type": "Person", name: portfolioData.profile.name, url: siteUrl },
+            },
+            breadcrumbJsonLd(siteUrl, [
+              { name: "Home", path: "/" },
+              { name: "Blog", path: "/blog/" },
+              { name: post.title, path: `/blog/${post.slug}/` },
+            ]),
+          ],
+          content: blogPostTemplate(post),
+          currentPath: `/blog/${post.slug}/`,
+        }),
+        "utf8"
+      );
+      console.log(`   ✓ /blog/${post.slug}/`);
+    });
+
+    const xml = (v) => String(v).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    const rss = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aakash Das — Blog</title>
+    <link>${siteUrl}/blog/</link>
+    <description>Notes on Python, Django, data pipelines and software architecture.</description>
+    <language>en</language>
+    <lastBuildDate>${posts[0].date.toUTCString()}</lastBuildDate>
+    <atom:link href="${siteUrl}/rss.xml" rel="self" type="application/rss+xml" />
+${posts
+  .map(
+    (p) => `    <item>
+      <title>${xml(p.title)}</title>
+      <link>${siteUrl}/blog/${p.slug}/</link>
+      <guid isPermaLink="true">${siteUrl}/blog/${p.slug}/</guid>
+      <pubDate>${p.date.toUTCString()}</pubDate>
+      <description>${xml(p.description)}</description>
+    </item>`
+  )
+  .join("\n")}
+  </channel>
+</rss>
+`;
+    fs.writeFileSync(path.join(DIST_DIR, "rss.xml"), rss, "utf8");
+  }
+
   // Legacy route compatibility: /project/source_box -> /project/sourcebox
   const legacySourceBoxDir = path.join(DIST_DIR, "project", "source_box");
   fs.mkdirSync(legacySourceBoxDir, { recursive: true });
@@ -239,6 +339,17 @@ function build() {
       (p) =>
         `  <url>\n    <loc>${portfolioData.profile.siteUrl}/project/${p.slug}/</loc>\n    <lastmod>${currentDate}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>`
     ),
+    ...(posts.length
+      ? [
+          `  <url>\n    <loc>${siteUrl}/blog/</loc>\n    <lastmod>${posts[0].dateIso}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.7</priority>\n  </url>`,
+          ...posts
+            .filter((p) => !p.draft)
+            .map(
+              (p) =>
+                `  <url>\n    <loc>${siteUrl}/blog/${p.slug}/</loc>\n    <lastmod>${p.dateIso}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>`
+            ),
+        ]
+      : []),
   ];
   const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -319,6 +430,12 @@ Sitemap: ${portfolioData.profile.siteUrl}/sitemap.xml
   copyRecursiveSync(
     path.join(__dirname, "src", "assets", "images", "portfolio"),
     path.join(assetsDir, "images", "portfolio")
+  );
+
+  // Blog images (referenced from posts as /assets/images/blog/<file>)
+  copyRecursiveSync(
+    path.join(__dirname, "src", "content", "blog", "images"),
+    path.join(assetsDir, "images", "blog")
   );
 
   // Company Logos

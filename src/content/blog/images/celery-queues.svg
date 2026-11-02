@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" role="img" aria-label="Three kinds of work go to three separate queues, each with its own workers and concurrency.">
+  <rect width="960" height="400" fill="#f8fafc"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <g font-family="-apple-system, Segoe UI, Roboto, Arial, sans-serif" fill="#0f172a">
+    <g font-size="15" font-weight="700" fill="#64748b">
+      <text x="30" y="38">WORK</text>
+      <text x="350" y="38">QUEUE</text>
+      <text x="640" y="38">WORKERS</text>
+    </g>
+    <g fill="#e2e8f0" stroke="#cbd5e1">
+      <rect x="30" y="60" width="250" height="70" rx="12"/>
+      <rect x="30" y="170" width="250" height="70" rx="12"/>
+      <rect x="30" y="280" width="250" height="70" rx="12"/>
+    </g>
+    <g fill="#e0e7ff" stroke="#a5b4fc">
+      <rect x="350" y="60" width="200" height="70" rx="12"/>
+      <rect x="350" y="170" width="200" height="70" rx="12"/>
+      <rect x="350" y="280" width="200" height="70" rx="12"/>
+    </g>
+    <g fill="#dcfce7" stroke="#86efac">
+      <rect x="640" y="60" width="290" height="70" rx="12"/>
+      <rect x="640" y="170" width="290" height="70" rx="12"/>
+      <rect x="640" y="280" width="290" height="70" rx="12"/>
+    </g>
+    <g font-size="17" font-weight="600">
+      <text x="50" y="102">Emails, webhooks, quick jobs</text>
+      <text x="50" y="212">Vendor and marketplace syncs</text>
+      <text x="50" y="322">Reports, big exports</text>
+      <text x="370" y="102" font-family="ui-monospace, Menlo, Consolas, monospace">default</text>
+      <text x="370" y="212" font-family="ui-monospace, Menlo, Consolas, monospace">integrations</text>
+      <text x="370" y="322" font-family="ui-monospace, Menlo, Consolas, monospace">reports</text>
+      <text x="660" y="102">4 workers, fast turnaround</text>
+      <text x="660" y="212">8 workers, mostly waiting on I/O</text>
+      <text x="660" y="322">2 workers, heavy and slow</text>
+    </g>
+    <g stroke="#64748b" stroke-width="2" fill="none">
+      <line x1="282" y1="95" x2="348" y2="95" marker-end="url(#arr)"/>
+      <line x1="282" y1="205" x2="348" y2="205" marker-end="url(#arr)"/>
+      <line x1="282" y1="315" x2="348" y2="315" marker-end="url(#arr)"/>
+      <line x1="552" y1="95" x2="638" y2="95" marker-end="url(#arr)"/>
+      <line x1="552" y1="205" x2="638" y2="205" marker-end="url(#arr)"/>
+      <line x1="552" y1="315" x2="638" y2="315" marker-end="url(#arr)"/>
+    </g>
+  </g>
+</svg>

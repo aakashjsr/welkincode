@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-label="Two columns: decisions that are hard to change later, and decisions that are easy to change later.">
+  <rect width="960" height="500" fill="#f8fafc"/>
+  <g font-family="-apple-system, Segoe UI, Roboto, Arial, sans-serif" fill="#0f172a">
+    <text x="40" y="52" font-size="22" font-weight="700" fill="#b91c1c">Hard to undo. Decide now.</text>
+    <text x="520" y="52" font-size="22" font-weight="700" fill="#047857">Easy to change. Defer.</text>
+
+    <g fill="#fee2e2" stroke="#fca5a5">
+      <rect x="40" y="75" width="400" height="56" rx="10"/>
+      <rect x="40" y="145" width="400" height="56" rx="10"/>
+      <rect x="40" y="215" width="400" height="56" rx="10"/>
+      <rect x="40" y="285" width="400" height="56" rx="10"/>
+      <rect x="40" y="355" width="400" height="56" rx="10"/>
+      <rect x="40" y="425" width="400" height="56" rx="10"/>
+    </g>
+    <g font-size="18" font-weight="600">
+      <text x="62" y="109">Who owns a row (tenancy)</text>
+      <text x="62" y="179">How money and units are stored</text>
+      <text x="62" y="249">IDs and time zones</text>
+      <text x="62" y="319">Login and permissions</text>
+      <text x="62" y="389">Handling duplicate webhooks</text>
+      <text x="62" y="459">A trail of who changed what</text>
+    </g>
+
+    <g fill="#dcfce7" stroke="#86efac">
+      <rect x="520" y="75" width="400" height="56" rx="10"/>
+      <rect x="520" y="145" width="400" height="56" rx="10"/>
+      <rect x="520" y="215" width="400" height="56" rx="10"/>
+      <rect x="520" y="285" width="400" height="56" rx="10"/>
+      <rect x="520" y="355" width="400" height="56" rx="10"/>
+      <rect x="520" y="425" width="400" height="56" rx="10"/>
+    </g>
+    <g font-size="18" font-weight="600">
+      <text x="542" y="109">Microservices</text>
+      <text x="542" y="179">Kubernetes</text>
+      <text x="542" y="249">A separate search engine</text>
+      <text x="542" y="319">A caching layer</text>
+      <text x="542" y="389">A message broker</text>
+      <text x="542" y="459">A custom-built admin panel</text>
+    </g>
+  </g>
+</svg>

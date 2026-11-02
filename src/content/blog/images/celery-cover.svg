@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Design a reliable background job system with Celery and Redis">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0f19"/>
+      <stop offset="1" stop-color="#312e81"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g font-family="ui-monospace, Menlo, Consolas, monospace" font-size="26" font-weight="600">
+    <rect x="900" y="130" width="230" height="80" rx="14" fill="#ffffff" fill-opacity="0.10" stroke="#a5b4fc" stroke-opacity="0.7" stroke-width="2"/>
+    <text x="930" y="180" fill="#e0e7ff">Queue</text>
+    <rect x="900" y="235" width="230" height="80" rx="14" fill="#ffffff" fill-opacity="0.10" stroke="#a5b4fc" stroke-opacity="0.7" stroke-width="2"/>
+    <text x="930" y="285" fill="#e0e7ff">Worker</text>
+    <rect x="900" y="340" width="230" height="80" rx="14" fill="#a5b4fc" fill-opacity="0.95"/>
+    <text x="930" y="390" fill="#1e1b4b">Retry</text>
+  </g>
+  <g font-family="-apple-system, Segoe UI, Roboto, Arial, sans-serif" fill="#ffffff">
+    <text x="80" y="225" font-size="56" font-weight="700">Design a reliable</text>
+    <text x="80" y="300" font-size="56" font-weight="700">background job system</text>
+    <text x="80" y="375" font-size="56" font-weight="700" fill="#a5b4fc">with Celery and Redis</text>
+    <text x="80" y="540" font-size="28" fill="#94a3b8">Aakash Das &#183; Software Architect</text>
+  </g>
+</svg>

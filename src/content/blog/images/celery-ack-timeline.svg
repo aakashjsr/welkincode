@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" role="img" aria-label="With early acknowledgement a crashed task is lost. With late acknowledgement it is delivered again.">
+  <rect width="960" height="360" fill="#f8fafc"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <g font-family="-apple-system, Segoe UI, Roboto, Arial, sans-serif" fill="#0f172a">
+    <text x="30" y="40" font-size="20" font-weight="700">Early ack (the default)</text>
+    <g fill="#e2e8f0" stroke="#cbd5e1">
+      <rect x="30" y="60" width="140" height="56" rx="10"/>
+      <rect x="205" y="60" width="110" height="56" rx="10" fill="#dbeafe" stroke="#93c5fd"/>
+      <rect x="350" y="60" width="150" height="56" rx="10"/>
+      <rect x="535" y="60" width="120" height="56" rx="10" fill="#fee2e2" stroke="#fca5a5"/>
+    </g>
+    <g font-size="16" font-weight="600" text-anchor="middle">
+      <text x="100" y="94">Receive</text>
+      <text x="260" y="94">Ack</text>
+      <text x="425" y="94">Run task</text>
+      <text x="595" y="94">Crash</text>
+    </g>
+    <g font-size="17" font-weight="700" fill="#b91c1c">
+      <text x="690" y="84">Already acked.</text>
+      <text x="690" y="106">The task is lost.</text>
+    </g>
+
+    <text x="30" y="190" font-size="20" font-weight="700">Late ack (acks_late=True)</text>
+    <g fill="#e2e8f0" stroke="#cbd5e1">
+      <rect x="30" y="210" width="140" height="56" rx="10"/>
+      <rect x="205" y="210" width="150" height="56" rx="10"/>
+      <rect x="390" y="210" width="120" height="56" rx="10" fill="#fee2e2" stroke="#fca5a5"/>
+    </g>
+    <g font-size="16" font-weight="600" text-anchor="middle">
+      <text x="100" y="244">Receive</text>
+      <text x="280" y="244">Run task</text>
+      <text x="450" y="244">Crash</text>
+    </g>
+    <g font-size="17" font-weight="700" fill="#047857">
+      <text x="545" y="234">Never acked, so the broker</text>
+      <text x="545" y="256">delivers it again. It runs twice.</text>
+    </g>
+    <text x="30" y="320" font-size="16" fill="#64748b">Late ack trades "maybe lost" for "maybe duplicated". That is why the task must be safe to run twice.</text>
+  </g>
+</svg>

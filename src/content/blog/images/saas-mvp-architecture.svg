@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 460" role="img" aria-label="A browser talks to one application made of several modules. The app and a worker share one PostgreSQL database. Files go to S3 and errors go to Sentry.">
+  <rect width="960" height="460" fill="#f8fafc"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <g font-family="-apple-system, Segoe UI, Roboto, Arial, sans-serif" fill="#0f172a">
+    <rect x="30" y="170" width="140" height="80" rx="12" fill="#e2e8f0" stroke="#cbd5e1"/>
+    <text x="100" y="216" font-size="18" font-weight="600" text-anchor="middle">Browser</text>
+
+    <rect x="240" y="60" width="400" height="260" rx="16" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+    <text x="260" y="92" font-size="18" font-weight="700" fill="#1e40af">One application</text>
+    <g font-size="16" font-weight="600">
+      <rect x="262" y="110" width="170" height="56" rx="10" fill="#ffffff" stroke="#bfdbfe"/>
+      <text x="347" y="144" text-anchor="middle">accounts</text>
+      <rect x="448" y="110" width="170" height="56" rx="10" fill="#ffffff" stroke="#bfdbfe"/>
+      <text x="533" y="144" text-anchor="middle">catalog</text>
+      <rect x="262" y="182" width="170" height="56" rx="10" fill="#ffffff" stroke="#bfdbfe"/>
+      <text x="347" y="216" text-anchor="middle">orders</text>
+      <rect x="448" y="182" width="170" height="56" rx="10" fill="#ffffff" stroke="#bfdbfe"/>
+      <text x="533" y="216" text-anchor="middle">billing</text>
+    </g>
+    <text x="260" y="276" font-size="14" fill="#64748b">Modules call each other through small service functions.</text>
+    <text x="260" y="298" font-size="14" fill="#64748b">They do not reach into each other's tables.</text>
+
+    <rect x="700" y="60" width="230" height="80" rx="12" fill="#e2e8f0" stroke="#cbd5e1"/>
+    <text x="815" y="96" font-size="17" font-weight="600" text-anchor="middle">Worker</text>
+    <text x="815" y="118" font-size="13" fill="#64748b" text-anchor="middle">same codebase, other command</text>
+
+    <rect x="240" y="370" width="400" height="70" rx="12" fill="#047857"/>
+    <text x="440" y="412" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">PostgreSQL</text>
+
+    <rect x="700" y="240" width="100" height="60" rx="10" fill="#e2e8f0" stroke="#cbd5e1"/>
+    <text x="750" y="276" font-size="16" font-weight="600" text-anchor="middle">S3</text>
+    <rect x="820" y="240" width="110" height="60" rx="10" fill="#e2e8f0" stroke="#cbd5e1"/>
+    <text x="875" y="276" font-size="16" font-weight="600" text-anchor="middle">Sentry</text>
+  </g>
+  <g stroke="#64748b" stroke-width="2" fill="none">
+    <line x1="170" y1="210" x2="238" y2="190" marker-end="url(#arrow)"/>
+    <line x1="440" y1="322" x2="440" y2="368" marker-end="url(#arrow)"/>
+    <line x1="700" y1="100" x2="642" y2="130" marker-end="url(#arrow)"/>
+    <path d="M815 142 L815 345 L560 345 L560 368" marker-end="url(#arrow)"/>
+    <line x1="642" y1="250" x2="698" y2="268" marker-end="url(#arrow)"/>
+  </g>
+</svg>

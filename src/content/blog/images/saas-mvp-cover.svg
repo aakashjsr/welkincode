@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Architect a SaaS MVP without overengineering it">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0f19"/>
+      <stop offset="1" stop-color="#14532d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g>
+    <rect x="900" y="150" width="230" height="80" rx="14" fill="#ffffff" fill-opacity="0.10" stroke="#86efac" stroke-opacity="0.6" stroke-width="2"/>
+    <rect x="900" y="255" width="230" height="80" rx="14" fill="#ffffff" fill-opacity="0.10" stroke="#86efac" stroke-opacity="0.6" stroke-width="2"/>
+    <rect x="900" y="360" width="230" height="80" rx="14" fill="#86efac" fill-opacity="0.9"/>
+    <g font-family="ui-monospace, Menlo, Consolas, monospace" font-size="26" font-weight="600">
+      <text x="930" y="200" fill="#dcfce7">Frontend</text>
+      <text x="930" y="305" fill="#dcfce7">One app</text>
+      <text x="930" y="410" fill="#052e16">Database</text>
+    </g>
+  </g>
+  <g font-family="-apple-system, Segoe UI, Roboto, Arial, sans-serif" fill="#ffffff">
+    <text x="80" y="230" font-size="56" font-weight="700">Architect a SaaS MVP</text>
+    <text x="80" y="305" font-size="56" font-weight="700" fill="#86efac">without</text>
+    <text x="80" y="380" font-size="56" font-weight="700" fill="#86efac">overengineering it</text>
+    <text x="80" y="540" font-size="28" fill="#94a3b8">Aakash Das &#183; Software Architect</text>
+  </g>
+</svg>

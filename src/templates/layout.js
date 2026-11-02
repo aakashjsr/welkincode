@@ -4,6 +4,10 @@
  * accessible SVG logo, header, modal, and footer.
  */
 
+const { loadPosts } = require("../blog/posts");
+
+const hasBlog = loadPosts().length > 0;
+
 function renderLogoSvg() {
   return `
     <svg class="brand-logo-svg" width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -109,6 +113,8 @@ function layout({
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/manifest.json" />
 
+  ${hasBlog ? `<link rel="alternate" type="application/rss+xml" title="Aakash Das — Blog" href="/rss.xml" />` : ""}
+
   <!-- Preload critical CSS -->
   <link rel="stylesheet" href="/assets/css/style.css" />
 
@@ -152,6 +158,7 @@ ${JSON.stringify(finalJsonLd, null, 2)}
         <a href="/#testimonials" class="nav-link">Reviews</a>
         <a href="/#how-i-work" class="nav-link">Process</a>
         <a href="/#experience" class="nav-link">Experience</a>
+        ${hasBlog ? `<a href="/blog/" class="nav-link">Blog</a>` : ""}
         <a href="/#contact" class="nav-link">Contact</a>
         <div class="nav-cta">
           <a href="mailto:aakashjsr@gmail.com?subject=Project%20inquiry" class="btn btn-primary btn-sm">Discuss a project</a>
@@ -180,6 +187,7 @@ ${JSON.stringify(finalJsonLd, null, 2)}
           <li><a href="https://www.linkedin.com/in/aakash94/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           <li><a href="https://www.toptal.com/developers/resume/aakash-kumar-das#qz8jnk" target="_blank" rel="noopener noreferrer">Toptal (Top 3%)</a></li>
           <li><a href="https://www.codementor.io/@aakashkumardas" target="_blank" rel="noopener noreferrer">Codementor (70 &#9733; reviews)</a></li>
+          ${hasBlog ? `<li><a href="/blog/">Blog</a></li>` : ""}
           <li><a href="mailto:aakashjsr@gmail.com">aakashjsr@gmail.com</a></li>
         </ul>
       </div>
