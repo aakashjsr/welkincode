@@ -20,9 +20,9 @@ const portfolioData = {
     upworkUrl: "", // TODO: add Upwork profile URL
     upworkReviews: 2,
     hero: {
-      headline: "Senior architect for startups that need reliable systems, shipped fast.",
+      headline: "Aakash Das, senior software engineer and architect for startups that need reliable systems, shipped fast.",
       subheadline:
-        "Independent software architect and Toptal top 3% engineer. I help founders and CTOs ship Python and Django platforms, build data pipelines, fix slow databases, and make sound architecture decisions.",
+        "I am an independent software engineer, software architect and Toptal top 3% developer. I help founders and CTOs ship Python and Django platforms, build data pipelines, fix slow databases, and make sound architecture decisions.",
       quote: {
         text: "He was super responsive with issues, and extremely productive throughout my work with him. Communication is excellent.",
         author: "Philip Reynolds",
@@ -33,7 +33,7 @@ const portfolioData = {
     },
     about: {
       paragraphs: [
-        "I am a Software Architect and Staff Engineer with close to a decade of hands-on experience building, scaling, and maintaining software that drives real business value. My day-to-day work is enterprise platform engineering: architecture, cross-functional delivery with product, design and QA, and mentoring other engineers.",
+        "I am Aakash Das, a Software Architect, Software Engineer and Staff Engineer with close to a decade of hands-on experience building, scaling, and maintaining software that drives real business value. My day-to-day work is enterprise platform engineering: architecture, cross-functional delivery with product, design and QA, and mentoring other engineers.",
         "Separately, I take on a small number of independent engagements through Toptal (top 3% global talent network) and direct client partnerships. Over my career, I have contributed to more than 20 production products across SaaS, eCommerce, real estate, healthcare, and fintech.",
         "My approach is grounded in pragmatic architecture: choosing the simplest reliable technology, designing clean schema boundaries, prioritizing performance, and communicating transparently. Clients work with me not just for code delivery, but for technical judgment, business alignment, and clear execution.",
       ],

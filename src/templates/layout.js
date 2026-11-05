@@ -43,8 +43,8 @@ function layout({
     "familyName": "Das",
     "url": siteUrl,
     "image": `${siteUrl}/assets/images/aakash-kumar-das.jpeg`,
-    "jobTitle": "Software Architect",
-    "description": "Independent software architect and senior engineer for hire, specializing in Python and Django backends, data pipelines, database performance, and AI integration.",
+    "jobTitle": "Software Engineer & Software Architect",
+    "description": "Aakash Das is an independent software engineer and software architect for hire, specializing in Python and Django backends, data pipelines, database performance, and AI integration.",
     "sameAs": [
       "https://www.linkedin.com/in/aakash94/",
       "https://www.toptal.com/developers/resume/aakash-kumar-das#qz8jnk",
@@ -134,7 +134,7 @@ ${JSON.stringify(finalJsonLd, null, 2)}
           ${renderLogoSvg()}
           <div>
             <span class="brand-name">Aakash Das</span>
-            <span class="brand-title">Software Architect</span>
+            <span class="brand-title">Software Engineer &amp; Architect</span>
           </div>
         </div>
       </a>
@@ -180,7 +180,7 @@ ${JSON.stringify(finalJsonLd, null, 2)}
           ${renderLogoSvg()}
           <div>
             <div style="font-weight: 700; color: var(--text-main);">Aakash Das</div>
-            <div style="font-size: 0.8125rem; color: var(--text-subtle);">Software Architect &bull; Staff Engineer</div>
+            <div style="font-size: 0.8125rem; color: var(--text-subtle);">Software Engineer &amp; Architect &bull; Staff Engineer</div>
           </div>
         </div>
         <ul class="footer-links" aria-label="External professional links">

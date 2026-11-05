@@ -81,7 +81,7 @@ function build() {
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      name: "Aakash Das — Independent Software Architect",
+      name: "Aakash Das — Software Engineer & Architect",
       url: siteUrl,
       image: `${siteUrl}/assets/images/aakash-kumar-das.jpeg`,
       areaServed: "Worldwide",
@@ -98,9 +98,9 @@ function build() {
     },
   ];
   const homeHtml = layout({
-    title: "Aakash Das (Aakash Kumar Das) | Python & Django Software Architect",
+    title: "Aakash Das | Software Engineer & Software Architect (Python, Django)",
     description:
-      "Aakash Kumar Das: independent software architect for hire. Python, Django, React, AWS, data pipelines, database tuning and AI integration. Toptal top 3%.",
+      "Aakash Das (Aakash Kumar Das) is a software engineer and software architect for hire. Python, Django, React, AWS, data pipelines, database tuning and AI integration. Toptal top 3%.",
     canonicalUrl: `${siteUrl}/`,
     siteUrl,
     jsonLd: homeJsonLd,

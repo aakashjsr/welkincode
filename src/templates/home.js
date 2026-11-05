@@ -17,7 +17,7 @@ function homeTemplate(data, services = []) {
           <div class="hero-content">
             <div class="hero-badge">
               <span class="status-dot" style="display:inline-block;width:8px;height:8px;background:#059669;border-radius:50%;"></span>
-              Software Architect &bull; Independent Consultant
+              Software Engineer &amp; Architect &bull; Independent Consultant
             </div>
             <h1 class="hero-headline">${profile.hero.headline}</h1>
             <p class="hero-subheadline">${profile.hero.subheadline}</p>
@@ -41,7 +41,7 @@ function homeTemplate(data, services = []) {
               <div class="profile-img-wrap">
                 <img
                   src="/assets/images/aakash-kumar-das.jpeg"
-                  alt="Aakash Das — Software Architect"
+                  alt="Aakash Das, software engineer and software architect"
                   class="profile-img"
                   width="160"
                   height="160"
@@ -50,7 +50,7 @@ function homeTemplate(data, services = []) {
                 <span class="status-indicator" title="Taking on select engagements"></span>
               </div>
               <div class="profile-name">Aakash Das</div>
-              <div class="profile-title">Software Architect</div>
+              <div class="profile-title">Software Engineer &amp; Architect</div>
               <div class="profile-company">Toptal Top 3% &bull; 10 Years Experience</div>
               <div class="profile-location">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
