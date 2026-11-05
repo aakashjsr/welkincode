@@ -20,7 +20,7 @@ const portfolioData = {
     upworkUrl: "", // TODO: add Upwork profile URL
     upworkReviews: 2,
     hero: {
-      headline: "Aakash Das, senior software engineer and architect for startups that need reliable systems, shipped fast.",
+      headline: "Senior architect for startups that need reliable systems, shipped fast.",
       subheadline:
         "I am an independent software engineer, software architect and Toptal top 3% developer. I help founders and CTOs ship Python and Django platforms, build data pipelines, fix slow databases, and make sound architecture decisions.",
       quote: {
