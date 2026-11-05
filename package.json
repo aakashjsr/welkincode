@@ -24,7 +24,8 @@
     "preview": "node serve.js",
     "audit": "node audit.js",
     "build:legacy": "react-scripts build",
-    "start:legacy": "react-scripts start"
+    "start:legacy": "react-scripts start",
+    "optimize:images": "node scripts/optimize-images.js"
   },
   "eslintConfig": {
     "extends": [
@@ -45,6 +46,7 @@
     ]
   },
   "devDependencies": {
-    "sass": "^1.57.1"
+    "sass": "^1.57.1",
+    "sharp": "^0.33.5"
   }
 }

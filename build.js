@@ -373,6 +373,18 @@ Sitemap: ${portfolioData.profile.siteUrl}/sitemap.xml
 `;
   fs.writeFileSync(path.join(DIST_DIR, "_redirects"), redirects, "utf8");
 
+  // 7b. Cache headers (Cloudflare Pages). Images are content-stable; JS/CSS revalidate.
+  fs.writeFileSync(
+    path.join(DIST_DIR, "_headers"),
+    `/assets/images/*
+  Cache-Control: public, max-age=2592000
+
+/assets/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+`,
+    "utf8"
+  );
+
   // 8. Copy Assets
   console.log("📦 Copying CSS, JS, and image assets...");
   const assetsDir = path.join(DIST_DIR, "assets");
@@ -398,6 +410,11 @@ Sitemap: ${portfolioData.profile.siteUrl}/sitemap.xml
   fs.copyFileSync(
     path.join(__dirname, "src", "assets", "images", "aakash-kumar-das.jpeg"),
     path.join(assetsDir, "images", "aakash-kumar-das.jpeg")
+  );
+
+  fs.copyFileSync(
+    path.join(__dirname, "src", "assets", "images", "aakash-kumar-das-320.webp"),
+    path.join(assetsDir, "images", "aakash-kumar-das-320.webp")
   );
 
   // Favicon & manifest from public/

@@ -6,7 +6,12 @@
 
 const { loadPosts } = require("../blog/posts");
 
+const fs = require("fs");
+const path = require("path");
+
 const hasBlog = loadPosts().length > 0;
+// Inlined to remove the render-blocking HTML -> CSS request chain.
+const inlineCss = fs.readFileSync(path.join(__dirname, "..", "styles", "main.css"), "utf8");
 
 function renderLogoSvg() {
   return `
@@ -115,8 +120,7 @@ function layout({
 
   ${hasBlog ? `<link rel="alternate" type="application/rss+xml" title="Aakash Das — Blog" href="/rss.xml" />` : ""}
 
-  <!-- Preload critical CSS -->
-  <link rel="stylesheet" href="/assets/css/style.css" />
+  <style>${inlineCss}</style>
 
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">

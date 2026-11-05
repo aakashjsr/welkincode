@@ -40,7 +40,7 @@ function homeTemplate(data, services = []) {
             <div class="profile-card">
               <div class="profile-img-wrap">
                 <img
-                  src="/assets/images/aakash-kumar-das.jpeg"
+                  src="/assets/images/aakash-kumar-das-320.webp"
                   alt="Aakash Das, software engineer and software architect"
                   class="profile-img"
                   width="160"
@@ -150,7 +150,9 @@ function homeTemplate(data, services = []) {
               <div class="case-card-img-wrap">
                 <a href="/project/${project.slug}/" style="display:block;width:100%;height:100%;" tabindex="-1" aria-hidden="true">
                   <img
-                    src="${project.heroImage}"
+                    src="${project.heroImage.replace(/\.webp$/, "-640.webp")}"
+                    srcset="${project.heroImage.replace(/\.webp$/, "-640.webp")} 640w, ${project.heroImage.replace(/\.webp$/, "-1280.webp")} 1280w"
+                    sizes="(min-width: 992px) 33vw, (min-width: 576px) 50vw, 100vw"
                     alt="Platform screenshot of ${project.title}"
                     class="case-card-img"
                     width="600"
